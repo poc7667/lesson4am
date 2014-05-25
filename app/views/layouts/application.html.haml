@@ -6,4 +6,6 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
+    %link{href:  asset_path("economizer/css/font-awesome-alternative.css"), rel: "stylesheet", type: "text/css"}/
+    %link{href:  asset_path("economizer/css/font-awesome.css"), rel: "stylesheet", type: "text/css"}/
     = yield
