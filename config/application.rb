@@ -23,6 +23,12 @@ module Lesson4am
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
     # config.time_zone = 'Central Time (US & Canada)'
     config.assets.paths << "#{Rails.root}/vendor/themes"
+    config.assets.precompile += %w( vendor/themes/**/application.js )
+    config.assets.precompile += %w( vendor/themes/**/application.css )
+    config.assets.precompile += %w[*.png *.jpg *.jpeg *.gif]
+
+    # Precompile *all* assets, except those that start with underscore
+    config.assets.precompile << /(^[^_\/]|\/[^_])[^\/]*$/    
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
