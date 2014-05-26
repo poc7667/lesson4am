@@ -1,0 +1,36 @@
+%header.main
+  .container
+    %a.logo{href: "#"}
+      %img{alt: "Economizer", src:  asset_path("economizer/images/logo.png")}/
+    %nav.mobile.hidden-desktop.pull-right
+      %select.mobile-nav
+        %option{value: ".home"} Home
+        %option{value: ".features"} Features
+        %option{value: ".our-company"} About Us
+        %option{value: ".our-team"} Our Team
+        %option{value: ".our-work"} Our Work
+        %option{value: ".pricing"} Pricing
+        %option{value: ".blog"} Blog
+        %option{value: ".contact"} Get in touch
+    / nav.mobile
+    %nav.main.nav-collapse.visible-desktop
+      %ul.inline
+        %li
+          %a{href: ".home"} Home
+        %li
+          %a{href: ".features"} Features
+        %li
+          %a{href: ".our-company"} About Us
+        %li
+          %a{href: ".our-team"} Our Team
+        %li
+          %a{href: ".our-work"} Our Work
+        %li
+          %a{href: ".pricing"} Pricing
+        %li
+          %a{href: ".blog"} Blog
+        %li
+          %a{href: ".contact"} Get in touch
+    / /nav.main
+  / /.container
+/ /header.main
