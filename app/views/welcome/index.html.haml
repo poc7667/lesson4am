@@ -15,23 +15,22 @@
 .wrapper
   = render 'home_slider'
   = render 'header_main'
-  = render 'section_features'
+  / = render 'section_features'
   %section.experts.bordered.transparent.center
     .container
-      %h1.hero Crafted by Experts.
-      %p.center.sub-hero Duis suscipit, dui sit amet egestas fermentum, felis tortor venenatis magna, id imperdiet lectus sem non ipsum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec cursus varius ligula, at mollis leo posuere eget. Morbi vel facilisis augue. Aliquam erat volutpat.
+      %h1.hero Crafted by Taiwan Youth.
+      %p.center.sub-hero 發起由來原因.
       %a.button{href: "#"} Find out more
     / /.container
   / /.experts
 
-  = render 'our_company'
+  / = render 'our_company'
   = render 'our_team'
-  = render 'testimonials'
+  / = render 'testimonials'
   = render 'our_work'
-  = render 'portfolio_single'
-  = render 'pricing'
-  = render 'blog'
-  = render 'footer_main_contact'
+  / = render 'portfolio_single'
+  / = render 'pricing'
+  / = render 'blog'
 
   %footer.main.contact
     .container
@@ -48,32 +47,32 @@
             %i.icon-pushpin>
             Address
           %address
-            12 Ambient Gardens,
-            %br/
-            Manhattan,
-            %br/
-            New York
-            %br/
-            10264
-            %br/
-            United States
+            / 12 Ambient Gardens,
+            / %br/
+            / Manhattan,
+            / %br/
+            / New York
+            / %br/
+            / 10264
+            / %br/
+            / United States
         / /.span3
         .span3
           %h6
             %i.icon-envelope>
             Email
           %p
-            info@economiser.com
-            %br/
-            enquiries@economiser.com
+            info@4am-lesson.com
+            / %br/
+            / enquiries@economiser.com
           %hr/
           %h6
             %i.icon-phone>
             Phone
           %p
-            +44 141 639 2872
-            %br/
-            +44 141 632 4752
+            unavaliable 
+            / %br/
+            / +44 141 632 4752
         / /.span3
         .span6.offset1
           %form#contact{action: "form.php", method: "POST"}
@@ -97,6 +96,6 @@
 
     = render 'copyright'
     / /footer.main
-    
+
 
 / /.wrapper
