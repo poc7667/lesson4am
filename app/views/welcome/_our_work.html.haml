@@ -1,0 +1,80 @@
+%section.our-work
+  .container
+    %h1.hero Our Work
+    %p.sub-hero Check out some of the stuff we've created
+    .portfolio-controls.clearfix
+      %ul#portfolio-filters.inline.nmp.none.pull-left
+        %li
+          %a{"data-filter" => "", href: "#"} all
+        %li
+          %a{"data-filter" => ".creative", href: "#"} creative
+        %li
+          %a{"data-filter" => ".business", href: "#"} business
+        %li
+          %a{"data-filter" => ".artwork", href: "#"} artwork
+      .pull-right.hidden-phone
+        %span Columns:
+        %select#portfolio-selector
+          %option{value: "2"} 2
+          %option{value: "3"} 3
+          %option{value: "4"} 4
+      / /.pull-right
+    / /.portfolio-controls
+    #portfolio{"data-columns" => "3"}
+      %article.portfolio.creative
+        %a.portfolio-ajax{"data-subtitle" => "Here is the caption for the first portfolio item", "data-title" => "First portfolio item", href: "portfolio/portfolio-single.html"}
+          .holder
+            .mask
+            .type
+              %i.icon.icon-picture
+            .caption
+              %p Caption for portfolio item
+            %img{alt: "Portfolio Item", src:  asset_path("economizer/images/portfolio1.jpg")}/
+      %article.portfolio.artwork
+        %a.portfolio-ajax{"data-subtitle" => "Here is the caption for the second portfolio item", "data-title" => "Second portfolio item", href: "portfolio/portfolio-single.html"}
+          .holder
+            .mask
+            .type
+              %i.icon.icon-film
+            .caption
+              %p Caption for portfolio item
+            %img{alt: "Portfolio Item", src:  asset_path("economizer/images/portfolio2.jpg")}/
+      %article.portfolio.business
+        %a.portfolio-ajax{"data-subtitle" => "Here is the caption for the third portfolio item", "data-title" => "Third portfolio item", href: "portfolio/portfolio-single.html"}
+          .holder
+            .mask
+            .type
+              %i.icon.icon-music
+            .caption
+              %p Caption for portfolio item
+            %img{alt: "Portfolio Item", src:  asset_path("economizer/images/portfolio3.jpg")}/
+      %article.portfolio.creative
+        %a.portfolio-ajax{"data-subtitle" => "Here is the caption for the fourth portfolio item", "data-title" => "Fourth portfolio item", href: "portfolio/portfolio-single.html"}
+          .holder
+            .mask
+            .type
+              %i.icon.icon-link
+            .caption
+              %p Caption for portfolio item
+            %img{alt: "Portfolio Item", src:  asset_path("economizer/images/portfolio4.jpg")}/
+      %article.portfolio.artwork
+        %a.portfolio-ajax{"data-subtitle" => "Here is the caption for the fifth portfolio item", "data-title" => "Fifth portfolio item", href: "portfolio/portfolio-single.html"}
+          .holder
+            .mask
+            .type
+              %i.icon.icon-picture
+            .caption
+              %p Caption for portfolio item
+            %img{alt: "Portfolio Item", src:  asset_path("economizer/images/portfolio1.jpg")}/
+      %article.portfolio.business
+        %a.portfolio-ajax{"data-subtitle" => "Here is the caption for the sixth portfolio item", "data-title" => "Sixth portfolio item", href: "portfolio/portfolio-single.html"}
+          .holder
+            .mask
+            .type
+              %i.icon.icon-film
+            .caption
+              %p Caption for portfolio item
+            %img{alt: "Portfolio Item", src:  asset_path("economizer/images/portfolio2.jpg")}/
+    / /#portfolio
+  / /.container
+/ /.our-work
