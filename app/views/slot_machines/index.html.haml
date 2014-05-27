@@ -1,0 +1,21 @@
+%h1 Listing slot_machines
+
+%table
+  %tr
+    %th Name
+    %th Description
+    %th
+    %th
+    %th
+
+  - @slot_machines.each do |slot_machine|
+    %tr
+      %td= slot_machine.name
+      %td= slot_machine.description
+      %td= link_to 'Show', slot_machine
+      %td= link_to 'Edit', edit_slot_machine_path(slot_machine)
+      %td= link_to 'Destroy', slot_machine, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Slot machine', new_slot_machine_path
