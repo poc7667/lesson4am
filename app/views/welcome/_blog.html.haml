@@ -1,0 +1,125 @@
+%section.blog
+  .container
+    %h1.hero Our Blog
+    %p.sub-hero Read our latest thoughts on our always interesting blog.
+    .blog-controls.clearfix
+      %ul#blog-filters.inline.nmp.none.pull-left
+        %li
+          %a{"data-filter" => "", href: "#"} all
+        %li
+          %a{"data-filter" => ".news", href: "#"} news
+        %li
+          %a{"data-filter" => ".announcements", href: "#"} announcements
+        %li
+          %a{"data-filter" => ".miscellaneous", href: "#"} miscellaneous
+      .pull-right.hidden-phone
+        %span Columns:
+        %select#blog-selector
+          %option{value: "2"} 2
+          %option{value: "3"} 3
+          %option{value: "4"} 4
+      / /.pull-right
+    / /.blog-controls
+    #blog{"data-columns" => "3"}
+      %article.blog-item.news
+        %a.blog-ajax{"data-subtitle" => "Here is the caption for the first blog item", "data-title" => "First blog item", href: "blog/blog-single.html"}
+          %img{alt: "Blog Item", src:  asset_path("economizer/images/blog1.jpg")}/
+        .content
+          %h4 An interesting blog title
+          .meta
+            %p
+              Posted on the
+              %span.date 14th April 2013
+              by
+              %a{href: "#"} admin
+          / /.meta
+          %p Curabitur non gravida lectus. Curabitur odio justo, faucibus in imperdiet at, convallis eget urna. Vestibulum accumsan libero ut nibh malesuada cursus eget non leo. Vestibulum vestibulum egestas tortor at aliquet. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          %a.button.small.blog-ajax{"data-subtitle" => "Here is the caption for the first blog item", "data-title" => "First blog item", href: "blog/blog-single.html"} Read more..
+      %article.blog-item.miscellaneous
+        %a.blog-ajax{"data-subtitle" => "Here is the caption for the second blog item", "data-title" => "Second blog item", href: "blog/blog-single.html"}
+          %img{alt: "Blog Item", src:  asset_path("economizer/images/blog2.jpg")}/
+        .content
+          %h4 An interesting blog title
+          .meta
+            %p
+              Posted on the
+              %span.date 14th April 2013
+              by
+              %a{href: "#"} admin
+          / /.meta
+          %p Curabitur non gravida lectus. Curabitur odio justo, faucibus in imperdiet at, convallis eget urna. Vestibulum accumsan libero ut nibh malesuada cursus eget non leo. Vestibulum vestibulum egestas tortor at aliquet. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          %a.button.small.blog-ajax{"data-subtitle" => "Here is the caption for the second blog item", "data-title" => "Second blog item", href: "blog/blog-single.html"} Read more..
+      %article.blog-item.announcements
+        %a.blog-ajax{"data-subtitle" => "Here is the caption for the third blog item", "data-title" => "Third blog item", href: "blog/blog-single.html"}
+          %img{alt: "Blog Item", src:  asset_path("economizer/images/blog3.jpg")}/
+        .content
+          %h4 An interesting blog title
+          .meta
+            %p
+              Posted on the
+              %span.date 14th April 2013
+              by
+              %a{href: "#"} admin
+          / /.meta
+          %p Curabitur non gravida lectus. Curabitur odio justo, faucibus in imperdiet at, convallis eget urna. Vestibulum accumsan libero ut nibh malesuada cursus eget non leo. Vestibulum vestibulum egestas tortor at aliquet. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          %a.button.small.blog-ajax{"data-subtitle" => "Here is the caption for the third blog item", "data-title" => "Third blog item", href: "blog/blog-single.html"} Read more..
+      %article.blog-item.news
+        %a.blog-ajax{"data-subtitle" => "Here is the caption for the fourth blog item", "data-title" => "Fourth blog item", href: "blog/blog-single.html"}
+          %img{alt: "Blog Item", src:  asset_path("economizer/images/blog4.jpg")}/
+        .content
+          %h4 An interesting blog title
+          .meta
+            %p
+              Posted on the
+              %span.date 14th April 2013
+              by
+              %a{href: "#"} admin
+          / /.meta
+          %p Curabitur non gravida lectus. Curabitur odio justo, faucibus in imperdiet at, convallis eget urna. Vestibulum accumsan libero ut nibh malesuada cursus eget non leo. Vestibulum vestibulum egestas tortor at aliquet. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          %a.button.small.blog-ajax{"data-subtitle" => "Here is the caption for the fourth blog item", "data-title" => "Fourth blog item", href: "blog/blog-single.html"} Read more..
+      %article.blog-item.miscellaneous
+        %a.blog-ajax{"data-subtitle" => "Here is the caption for the fifth blog item", "data-title" => "Fifth blog item", href: "blog/blog-single.html"}
+          %img{alt: "Blog Item", src:  asset_path("economizer/images/blog5.jpg")}/
+        .content
+          %h4 An interesting blog title
+          .meta
+            %p
+              Posted on the
+              %span.date 14th April 2013
+              by
+              %a{href: "#"} admin
+          / /.meta
+          %p Curabitur non gravida lectus. Curabitur odio justo, faucibus in imperdiet at, convallis eget urna. Vestibulum accumsan libero ut nibh malesuada cursus eget non leo. Vestibulum vestibulum egestas tortor at aliquet. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          %a.button.small.blog-ajax{"data-subtitle" => "Here is the caption for the fifth blog item", "data-title" => "Fifth blog item", href: "blog/blog-single.html"} Read more..
+      %article.blog-item.announcements
+        %a.blog-ajax{"data-subtitle" => "Here is the caption for the sixth blog item", "data-title" => "Sixth blog item", href: "blog/blog-single.html"}
+          %img{alt: "Blog Item", src:  asset_path("economizer/images/blog1.jpg")}/
+        .content
+          %h4 An interesting blog title
+          .meta
+            %p
+              Posted on the
+              %span.date 14th April 2013
+              by
+              %a{href: "#"} admin
+          / /.meta
+          %p Curabitur non gravida lectus. Curabitur odio justo, faucibus in imperdiet at, convallis eget urna. Vestibulum accumsan libero ut nibh malesuada cursus eget non leo. Vestibulum vestibulum egestas tortor at aliquet. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          %a.button.small.blog-ajax{"data-subtitle" => "Here is the caption for the sixth blog item", "data-title" => "Sixth blog item", href: "blog/blog-single.html"} Read more..
+    / /#blog
+  / /.container
+/ /.blog
+%section.blog-single
+  %a.blog-back Close
+  .container
+    %a.blog-next
+      Next
+      %i.icon-arrow-right
+    %a.blog-prev
+      %i.icon-arrow-left>
+      Previous
+    %h1.blog-title.hero
+    %p.sub-hero.blog-subtitle
+    .basket
+    / /.basket
+  / /.container
+/ /.blog-single

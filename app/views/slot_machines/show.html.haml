@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @slot_machine.name
+%p
+  %b Description:
+  = @slot_machine.description
+
+= link_to 'Edit', edit_slot_machine_path(@slot_machine)
+\|
+= link_to 'Back', slot_machines_path
