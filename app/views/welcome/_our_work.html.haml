@@ -22,6 +22,7 @@
     / /.portfolio-controls
     #portfolio{"data-columns" => "3"}
       %article.portfolio.creative
+        = link_to "slot", slot_machines_path
         %a.portfolio-ajax{"data-subtitle" => "Here is the caption for the first portfolio item", "data-title" => "First portfolio item", href: "portfolio/portfolio-single.html"}
           .holder
             .mask
@@ -39,42 +40,42 @@
             .caption
               %p Caption for portfolio item
             %img{alt: "Portfolio Item", src:  asset_path("economizer/images/portfolio2.jpg")}/
-      %article.portfolio.business
-        %a.portfolio-ajax{"data-subtitle" => "Here is the caption for the third portfolio item", "data-title" => "Third portfolio item", href: "portfolio/portfolio-single.html"}
-          .holder
-            .mask
-            .type
-              %i.icon.icon-music
-            .caption
-              %p Caption for portfolio item
-            %img{alt: "Portfolio Item", src:  asset_path("economizer/images/portfolio3.jpg")}/
-      %article.portfolio.creative
-        %a.portfolio-ajax{"data-subtitle" => "Here is the caption for the fourth portfolio item", "data-title" => "Fourth portfolio item", href: "portfolio/portfolio-single.html"}
-          .holder
-            .mask
-            .type
-              %i.icon.icon-link
-            .caption
-              %p Caption for portfolio item
-            %img{alt: "Portfolio Item", src:  asset_path("economizer/images/portfolio4.jpg")}/
-      %article.portfolio.artwork
-        %a.portfolio-ajax{"data-subtitle" => "Here is the caption for the fifth portfolio item", "data-title" => "Fifth portfolio item", href: "portfolio/portfolio-single.html"}
-          .holder
-            .mask
-            .type
-              %i.icon.icon-picture
-            .caption
-              %p Caption for portfolio item
-            %img{alt: "Portfolio Item", src:  asset_path("economizer/images/portfolio1.jpg")}/
-      %article.portfolio.business
-        %a.portfolio-ajax{"data-subtitle" => "Here is the caption for the sixth portfolio item", "data-title" => "Sixth portfolio item", href: "portfolio/portfolio-single.html"}
-          .holder
-            .mask
-            .type
-              %i.icon.icon-film
-            .caption
-              %p Caption for portfolio item
-            %img{alt: "Portfolio Item", src:  asset_path("economizer/images/portfolio2.jpg")}/
+      / %article.portfolio.business
+      /   %a.portfolio-ajax{"data-subtitle" => "Here is the caption for the third portfolio item", "data-title" => "Third portfolio item", href: "portfolio/portfolio-single.html"}
+      /     .holder
+      /       .mask
+      /       .type
+      /         %i.icon.icon-music
+      /       .caption
+      /         %p Caption for portfolio item
+      /       %img{alt: "Portfolio Item", src:  asset_path("economizer/images/portfolio3.jpg")}/
+      / %article.portfolio.creative
+      /   %a.portfolio-ajax{"data-subtitle" => "Here is the caption for the fourth portfolio item", "data-title" => "Fourth portfolio item", href: "portfolio/portfolio-single.html"}
+      /     .holder
+      /       .mask
+      /       .type
+      /         %i.icon.icon-link
+      /       .caption
+      /         %p Caption for portfolio item
+      /       %img{alt: "Portfolio Item", src:  asset_path("economizer/images/portfolio4.jpg")}/
+      / %article.portfolio.artwork
+      /   %a.portfolio-ajax{"data-subtitle" => "Here is the caption for the fifth portfolio item", "data-title" => "Fifth portfolio item", href: "portfolio/portfolio-single.html"}
+      /     .holder
+      /       .mask
+      /       .type
+      /         %i.icon.icon-picture
+      /       .caption
+      /         %p Caption for portfolio item
+      /       %img{alt: "Portfolio Item", src:  asset_path("economizer/images/portfolio1.jpg")}/
+      / %article.portfolio.business
+      /   %a.portfolio-ajax{"data-subtitle" => "Here is the caption for the sixth portfolio item", "data-title" => "Sixth portfolio item", href: "portfolio/portfolio-single.html"}
+      /     .holder
+      /       .mask
+      /       .type
+      /         %i.icon.icon-film
+      /       .caption
+      /         %p Caption for portfolio item
+      /       %img{alt: "Portfolio Item", src:  asset_path("economizer/images/portfolio2.jpg")}/
     / /#portfolio
   / /.container
 / /.our-work
