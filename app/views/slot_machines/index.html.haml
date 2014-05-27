@@ -1,3 +1,29 @@
+.fancy
+  %ul.slot
+    / In reverse order so the 7s show on load
+    %li
+      %span ABC
+    %li
+      %span XY
+  
+  %ul.slot
+    %li
+      %span 12
+    %li
+      %span 23
+    %li
+      %span 23
+  %input#playFancy{type: "button", value: "Play"}/
+
+%script{src: "http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"}
+%link{charset: "utf-8", href: asset_path("jslot/index.css"), media: "screen", rel: "stylesheet", title: "no title", type: "text/css"}/
+
+
+
+  
+
+
+
 %h1 Listing slot_machines
 
 %table
@@ -19,3 +45,5 @@
 %br
 
 = link_to 'New Slot machine', new_slot_machine_path
+
+
