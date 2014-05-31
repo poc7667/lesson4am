@@ -1,5 +1,5 @@
-// // fancy example
-// jQuery(document).ready(
+// jQuery(document).ready(function()
+// {
 //     $('.fancy .slot').jSlots({
 //         number : 2,
 //         winnerNumber : 1,
@@ -19,12 +19,12 @@
 
 //             // react to the # of winning slots                 
 //             if ( winCount === 1 ) {
-//                 //alert('You got ' + winCount + ' 7!!!');
-//             } else if ( winCount > 1 ) {
-//                 //alert('You got ' + winCount + ' 7’s!!!');
+//                 alert('You got ' + winCount + ' 7!!!');
+//             } 
+//             else if ( winCount > 1 ) {
+//                 alert('You got ' + winCount + ' 7’s!!!');
 //             }
             
 //         }
 //     });
-
-// );
+// });

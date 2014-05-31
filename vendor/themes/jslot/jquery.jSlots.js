@@ -160,7 +160,7 @@
             finish : function() {
 
                 var that = this;
-
+                // actually endNum represents the answer
                 var endNum = base.randomRange( 1, base.liCount );
 
                 var finalPos = - ( (base.$liHeight * endNum) - base.$liHeight );
@@ -181,6 +181,8 @@
             base.doneCount++;
             // set the slot number to whatever it ended on
             slot.number = endNum;
+
+            alert(endNum);
 
             // if its in the winners array
             if (
