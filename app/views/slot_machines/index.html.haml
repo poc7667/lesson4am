@@ -1,27 +1,32 @@
 .fancy
   %ul.slot
     / In reverse order so the 7s show on load
-    %li
-      %span ABC
-    %li
-      %span XY
-  
+    %li#7
+      %span X
+    %li#5
+      %span Y
+    %li#4
+      %span Z  
+  %ul.slot
+    / In reverse order so the 7s show on load
+    %li#7
+      %span X
+    %li#5
+      %span Y
+    %li#4
+      %span Z       
   %ul.slot
     %li
       %span 12
     %li
       %span 23
     %li
-      %span 23
-  %input#playFancy{type: "button", value: "Play"}/
+      %span 12
+  %br
+  %input#playFancy{type: "button", value: "Play", class: "btn"}/
 
 %script{src: "http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"}
 %link{charset: "utf-8", href: asset_path("jslot/index.css"), media: "screen", rel: "stylesheet", title: "no title", type: "text/css"}/
-
-
-
-  
-
 
 
 %h1 Listing slot_machines
