@@ -1,0 +1,13 @@
+= simple_form_for(@buy_house) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :user_id
+    = f.input :age
+    = f.input :gender
+    = f.input :monthly_income
+    = f.input :job
+    = f.input :expenditure
+
+  .form-actions
+    = f.button :submit

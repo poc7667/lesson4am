@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b User:
+  = @buy_house.user_id
+%p
+  %b Age:
+  = @buy_house.age
+%p
+  %b Gender:
+  = @buy_house.gender
+%p
+  %b Monthly income:
+  = @buy_house.monthly_income
+%p
+  %b Job:
+  = @buy_house.job
+%p
+  %b Expenditure:
+  = @buy_house.expenditure
+
+= link_to 'Edit', edit_buy_house_path(@buy_house)
+\|
+= link_to 'Back', buy_houses_path
