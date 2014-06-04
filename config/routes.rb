@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :buy_houses
+
   resources :slot_machines
 
   resources :users
