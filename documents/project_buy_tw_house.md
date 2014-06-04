@@ -10,9 +10,20 @@ To calculate your future life after buying a house in Taiwan.
 * income
 
 ## TwHousePrice (tw_house_price)
-* City
-* Saled_at
-* 
+* city
+* town
+* transaction_type
+* target_type
+* date
+* address
+* land_area
+* house_area
+* building_type
+* parking_price
+* total_price
+* other_information
+
+		rails g model TwHousePrice city:string town:string transaction_type:string target_type:string date:date address:string land_area:float house_area:float building_type:string parking_price:float total_price:float other_information:hstore
 
 
 # Scaffold
