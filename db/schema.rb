@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140602045858) do
+ActiveRecord::Schema.define(version: 20140604072828) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,23 @@ ActiveRecord::Schema.define(version: 20140602045858) do
   create_table "slot_machines", force: true do |t|
     t.string   "name"
     t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tw_house_prices", force: true do |t|
+    t.string   "city"
+    t.string   "town"
+    t.string   "transaction_type"
+    t.string   "target_type"
+    t.date     "date"
+    t.string   "address"
+    t.float    "land_area"
+    t.float    "house_area"
+    t.string   "building_type"
+    t.float    "parking_price"
+    t.float    "total_price"
+    t.hstore   "other_information"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
