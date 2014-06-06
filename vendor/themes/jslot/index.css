@@ -1,0 +1,77 @@
+
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.jSlots-wrapper {
+    overflow: hidden;
+    height: 20px;
+    display: inline-block; /* to size correctly, can use float too, or width*/
+    border: 1px solid #999;
+}
+
+.slot {
+    float: left;
+}
+
+
+
+/* ---------------------------------------------------------------------
+   FANCY EXAMPLE
+--------------------------------------------------------------------- */
+.fancy .jSlots-wrapper {
+    overflow: hidden;
+    height: 100px;
+    display: inline-block; /* to size correctly, can use float too, or width*/
+    border: 1px solid #999;
+}
+
+.fancy .slot li {
+    width: 300px;
+    line-height: 100px;
+    text-align: center;
+    font-size: 70px;
+    font-weight: bold;
+    /*color: #fff;*/
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.8);
+    font-family: 'Gravitas One', serif;
+    border-left: 1px solid #999;
+}
+
+.fancy .slot:first-child li {
+    border-left: none;
+}
+
+/*.fancy .slot li:nth-child(7) {
+    background-color: #FFCE29;
+}
+.fancy .slot li:nth-child(6) {
+    background-color: #FFA22B;
+}
+.fancy .slot li:nth-child(5) {
+    background-color: #FF8645;
+}
+.fancy .slot li:nth-child(4) {
+    background-color: #FF6D3F;
+}
+.fancy .slot li:nth-child(3) {
+    background-color: #FF494C;
+}
+.fancy .slot li:nth-child(2) {
+    background-color: #FF3333;
+}
+.fancy .slot li:nth-child(1),
+.fancy .slot li:nth-child(8) {
+    background-color: #FF0000;
+}
+*/
+.fancy .slot li span {
+    display: block;
+}
+
+/* ---------------------------------------------------------------------
+   ANIMATIONS
+--------------------------------------------------------------------- */
