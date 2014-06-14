@@ -1,13 +1,54 @@
-= simple_form_for(@buy_house) do |f|
-  = f.error_notification
+.row  
+  .col-xs-12
+    = form_for(@buy_house, :html=> {class: "form-horizontal"} ) do |f|
+      .form-group
+        .form-inputs
+          .div.form-group
+            %label.col-sm-3.control-label.no-padding-right{for: "form-field-1"} Model Name
+            .col-sm-9
+              = f.text_field :user_id, class: 'input-xxlarge' |
+              / , :disabled => true
+      .space-4
 
-  .form-inputs
-    = f.input :user_id
-    = f.input :age
-    = f.input :gender
-    = f.input :monthly_income
-    = f.input :job
-    = f.input :expenditure
+      .form-group
+        .form-inputs
+          .div.form-group
+            %label.col-sm-3.control-label.no-padding-right{for: "form-field-1"} Gender
+            .col-sm-9
+              = f.text_field :gender, class: 'input-xxlarge'
+      .space-4
 
-  .form-actions
-    = f.button :submit
+      .form-group
+        .form-inputs
+          .div.form-group
+            %label.col-sm-3.control-label.no-padding-right{for: "form-field-1"} Age
+            .col-sm-9
+              = f.text_field :age, class: 'input-xxlarge' 
+      .space-4
+
+      .form-group
+        .form-inputs
+          .div.form-group
+            %label.col-sm-3.control-label.no-padding-right{for: "form-field-1"} Monthly Income
+            .col-sm-9
+              = f.text_field :monthly_income, class: 'input-xxlarge'
+      .space-4
+
+
+      .clearfix.form-actions
+        .col-md-offset-3.col-md-9
+          = f.submit 'save', class: 'btn btn-info'
+
+/ = simple_form_for(@buy_house) do |f|
+/   = f.error_notification
+
+/   .form-inputs
+/     = f.input :user_id
+/     = f.input :age
+/     = f.input :gender
+/     = f.input :monthly_income
+/     = f.input :job
+/     = f.input :expenditure
+
+/   .form-actions
+/     = f.button :submit

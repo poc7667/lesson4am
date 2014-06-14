@@ -24,9 +24,17 @@ class BuyHousesController < ApplicationController
   # POST /buy_houses
   # POST /buy_houses.json
   def create
-    @buy_house = BuyHouse.new(buy_house_params)
+    @buy_house = BuyHouse.new(buy_house_params)    
+    prediction = TwLaborIncome.new.get_prediction(
+          buy_house_params.each { |key, value| buy_house_params[key]=value.to_i } 
+        )
+    binding.pry
+
+    new_predict.get_prediction(params)
 
     respond_to do |format|
+      format.html { redirect_to action: "index" }
+      return
       if @buy_house.save
         format.html { redirect_to @buy_house, notice: 'Buy house was successfully created.' }
         format.json { render :show, status: :created, location: @buy_house }
@@ -66,6 +74,9 @@ class BuyHousesController < ApplicationController
     def set_buy_house
       @buy_house = BuyHouse.find(params[:id])
     end
+
+
+
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def buy_house_params
