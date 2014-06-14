@@ -15,6 +15,19 @@
     / nav.mobile
     %nav.main.nav-collapse.visible-desktop
       %ul.inline
+        - if user_signed_in?
+          %li 
+            = link_to current_user.name, "#", "omniauth" => "true"
+          %li
+            = link_to "Sign out", destroy_user_session_path,:method => :delete, "omniauth" => "true"
+        - else
+          %li
+            = link_to "Sign up", new_user_registration_path, "omniauth" => "true"
+          %li
+            = link_to "Sign in", new_user_session_path, "omniauth" => "true"
+          %li 
+            = link_to "Login with Facebook" ,  user_omniauth_authorize_path(:facebook), "omniauth" => "true"
+
         %li
           %a{href: ".home"} Home
         / %li
