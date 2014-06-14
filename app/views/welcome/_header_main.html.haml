@@ -28,8 +28,11 @@
           %li 
             = link_to "Login with Facebook" ,  user_omniauth_authorize_path(:facebook), "omniauth" => "true"
 
+        %omniauth
+          %li 
+            %a{href: ".home"} Home
         %li
-          %a{href: ".home"} Home
+          
         / %li
         /   %a{href: ".features"} Features
         / %li

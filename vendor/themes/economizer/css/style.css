@@ -451,6 +451,14 @@ nav.main ul li {
 	margin:0;
 }
 
+nav.main ul omniauth li a {
+    /*border-left: thick solid #FFF;*/
+    border-left: thick solid rgba(255, 255, 255, .1);
+	/*display:block;*/
+	line-height:24px;
+}
+
+
 nav.main ul li a {
 	color:#FFF;
 	display:block;
