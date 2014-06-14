@@ -70,3 +70,7 @@ end
 
 gem "simple-navigation"
 gem "simple-navigation-bootstrap"
+
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-facebook'
