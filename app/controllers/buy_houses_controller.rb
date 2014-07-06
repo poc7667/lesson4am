@@ -25,8 +25,18 @@ class BuyHousesController < ApplicationController
   # POST /buy_houses.json
   def create
     @buy_house = BuyHouse.new(buy_house_params)    
+    binding.pry
+    new_hash = {}
+
+    buy_house_params.to_hash.each { |key, value| 
+        if value.to_i > 0
+          new_hash[key]=value.to_i 
+        else
+          new_hash[key] = value
+        end
+    } 
     prediction = TwLaborIncome.new.get_prediction(
-          buy_house_params.each { |key, value| buy_house_params[key]=value.to_i } 
+        new_hash      
         )
     binding.pry
 

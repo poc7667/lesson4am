@@ -1,11 +1,11 @@
 class TwLaborIncome < ActiveRecord::Base
-  def self.get_rank_by_income(gender, age, income)
+  def self.get_rank_by_income(gender, age, current_income)
     
-    max = get_closest_larger("income", gender, age, income)
-    min = get_closest_smaller("income", gender, age, income)
-    
+    max = get_closest_larger("income", gender, age, current_income)
+    min = get_closest_smaller("income", gender, age, current_income)
+    binding.pry
     delta_x = (max.income - min.income)
-    delta_y = (income - min.income)
+    delta_y = (current_income - min.income)
 
     approximate_rank = min.accumulated_percentage + 
       (delta_y/delta_x)*(max.accumulated_percentage - min.accumulated_percentage)
