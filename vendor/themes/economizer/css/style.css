@@ -73,9 +73,13 @@ body.home {
 
 ul {
 	list-style:none;
-}
 
-li {
+}
+ul.fancy-list.nmp{
+	margin-left:30px;
+	text-align: left;
+}
+ul.fancy-list {
 	margin-bottom:10px;
 }
 
@@ -1282,7 +1286,7 @@ section.pricing .package header {
 
 section.pricing .package header h2 {
 	margin:0;
-	font-size:28px;
+	font-size:22px;
 	color:#FFF;
 }
 
