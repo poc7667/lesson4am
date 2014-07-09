@@ -90,7 +90,7 @@ $(window).load(function() {
 		initEvents = function() {
 
 			$('.portfolio-ajax').live('click', function(e) {
-				e.preventDefault();
+				// e.preventDefault();
 				getPositions();
 				$section.slideUp();
 				$index = $(this).parent('.portfolio').index();
