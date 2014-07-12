@@ -1,17 +1,8 @@
 %section.our-work
   .container
     %h1.hero Our Work
-    %p.sub-hero Check out some of the stuff we've created
+    %p.sub-hero Check out something we've created
     .portfolio-controls.clearfix
-      %ul#portfolio-filters.inline.nmp.none.pull-left
-        %li
-          %a{"data-filter" => "", href: "#"} all
-        %li
-          %a{"data-filter" => ".creative", href: "#"} creative
-        %li
-          %a{"data-filter" => ".business", href: "#"} business
-        %li
-          %a{"data-filter" => ".artwork", href: "#"} artwork
       .pull-right.hidden-phone
         %span Columns:
         %select#portfolio-selector
@@ -28,17 +19,37 @@
             .type
               %i.icon.icon-picture
             .caption
-              %p Ma words
+              %p  #{"馬語錄 Ma Red Book ".split.map(&:capitalize).join(' ')}
             %img{alt: "Portfolio Item", src:  asset_path("jslot/dictator-ma.jpg")}/
       %article.portfolio.artwork
-        %a.portfolio-ajax{"data-subtitle" => "Here is the caption for the second portfolio item", "data-title" => "Second portfolio item", href: "portfolio/portfolio-single.html"}
+        %a.portfolio-ajax{"data-subtitle" => "Here is the caption for the second portfolio item", "data-title" => "買一間房？還是監獄？", href: "portfolio/portfolio-single.html"}
           .holder
             .mask
             .type
               %i.icon.icon-film
             .caption
-              %p Caption for portfolio item
-            %img{alt: "Portfolio Item", src:  asset_path("economizer/images/portfolio2.jpg")}/
+              %p 買一間房？還是監獄？
+            %img{alt: "Portfolio Item", src:  "/images/houses/home_jail.jpg"}/
+      %article.portfolio.artwork
+        %a.portfolio-ajax{"data-subtitle" => "Here is the caption for the second portfolio item", "data-title" => "買一張便宜的機票去冰島", href: "portfolio/portfolio-single.html"}
+          .holder
+            .mask
+            .type
+              %i.icon.icon-film
+            .caption
+              %p 買一張便宜的機票去冰島
+            %img{alt: "Portfolio Item", src:  "/images/houses/travel_iceland.jpg"}/
+
+      %article.portfolio.artwork
+        %a.portfolio-ajax{"data-subtitle" => "Here is the caption for the second portfolio item", "data-title" => "出遊分組不再是麻煩事情", href: "portfolio/portfolio-single.html"}
+          .holder
+            .mask
+            .type
+              %i.icon.icon-film
+            .caption
+              %p 出遊分組不再是麻煩事情
+            %img{alt: "Portfolio Item", src:  "/images/houses/travel_iceland.jpg"}/
+
       / %article.portfolio.business
       /   %a.portfolio-ajax{"data-subtitle" => "Here is the caption for the third portfolio item", "data-title" => "Third portfolio item", href: "portfolio/portfolio-single.html"}
       /     .holder

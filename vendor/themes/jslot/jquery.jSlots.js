@@ -8,7 +8,6 @@
  */
 
 (function($){
-
     $.jSlots = function(el, options){
 
         var base = this;
@@ -181,9 +180,6 @@
             base.doneCount++;
             // set the slot number to whatever it ended on
             slot.number = endNum;
-
-            alert(endNum);
-
             // if its in the winners array
             if (
                 ( $.isArray( base.options.winnerNumber ) && base.options.winnerNumber.indexOf(endNum) > -1 ) ||
@@ -259,5 +255,29 @@
             });
         }
     };
+
+
+  return $('.fancy .slot').jSlots({
+    number: 1,
+    winnerNumber: 1,
+    spinner: '#playFancy',
+    easing: 'easeOutSine',
+    time: 7000,
+    loops: 6,
+    onStart: function() {
+      return $('.slot').removeClass('winner');
+    },
+    onWin: function(winCount, winners) {
+      $.each(winners, function() {
+        this.addClass("winner");
+      });
+      if (winCount === 1) {
+        console.log("hi");
+      } else if (winCount > 1) {
+        console.log("hi");
+      }
+    }
+  });
+
 
 })(jQuery);

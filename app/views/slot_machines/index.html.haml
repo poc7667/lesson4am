@@ -31,6 +31,26 @@
 %script{src: "http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"}
 %link{charset: "utf-8", href: asset_path("jslot/index.css"), media: "screen", rel: "stylesheet", title: "no title", type: "text/css"}/
 
+.content-section-a
+  .container
+    .row
+      .col-lg-5.col-sm-6
+        %hr.section-heading-spacer/
+        .clearfix
+        %h2.section-heading
+          Google Web Fonts and
+          = succeed "Font" do
+            %br/
+        %p.lead
+          This template features the 'Lato' font, part of the
+          = succeed "," do
+            %a{href: "http://www.google.com/fonts", target: "_blank"} Google Web Font library
+          = succeed "." do
+            %a{href: "http://fontawesome.io", target: "_blank"} icons from Font Awesome
+      .col-lg-5.col-lg-offset-2.col-sm-6
+        %img.img-responsive{alt: "", src: "img/phones.png"}/
+  / /.container
+
 
 / %h1 Listing slot_machines
 
