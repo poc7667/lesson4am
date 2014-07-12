@@ -147,7 +147,7 @@ jQuery(document).ready(function($) {
 	});
 
 	/*----------- Navigation -----------*/
-	$('nav.main a').click(function(e) {
+	$('nav.main a, nav.footer a').click(function(e) {
 		e.preventDefault();
 		$target = $(this).attr('href');
 		$padding = $($target).css('padding-top');
@@ -325,7 +325,7 @@ $(window).load(function() {
 	/*----------- Active Navigation Link -----------*/
 	$activeLink = (function() {
 		
-		var $mainLinks = $('nav.main').find('a'),
+		var $mainLinks = $('nav.main, nav.footer').find('a'),
 			$mobileMenu = $('.mobile-nav'),
 			$top,
 			$sections = [],
