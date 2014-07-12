@@ -1,4 +1,9 @@
-
+h1.hero {
+    font-size:30px;
+    margin:0 0 35px;
+    letter-spacing:-1px;
+    text-align: center
+}
 
 ul {
     padding: 0;
@@ -16,17 +21,22 @@ ul {
 .slot {
     float: left;
 }
-
-
-
 /* ---------------------------------------------------------------------
    FANCY EXAMPLE
 --------------------------------------------------------------------- */
+#slot_machine {
+  /*margin-left: auto ;
+  margin-right: auto ;*/
+    padding-top: 150px;
+    display: table;
+    margin: 0 auto;
+}
 .fancy .jSlots-wrapper {
     overflow: hidden;
     height: 100px;
     display: inline-block; /* to size correctly, can use float too, or width*/
     border: 1px solid #999;
+    -webkit-border-image:url(sw-alpha.png) 16;
 }
 
 .fancy .slot li {
