@@ -4,8 +4,8 @@ jQuery(document).ready(function(){
           winnerNumber : 1,
           spinner : '#playFancy',
           easing : 'easeOutSine',
-          time : 7000,
-          loops : 6,
+          time : 5000,
+          loops : 3,
           onStart : function() {
               $('.slot').removeClass('winner');
           },

@@ -237,13 +237,9 @@
                 base.options.onWin();
             }
         };
-
-
         // Run initializer
         base.init();
     };
-
-
     // --------------------------------------------------------------------- //
     // JQUERY FN
     // --------------------------------------------------------------------- //
@@ -262,8 +258,8 @@
     winnerNumber: 1,
     spinner: '#playFancy',
     easing: 'easeOutSine',
-    time: 7000,
-    loops: 6,
+    time: 2500,
+    loops: 2,
     onStart: function() {
       return $('.slot').removeClass('winner');
     },
