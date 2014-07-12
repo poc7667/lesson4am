@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   resources :buy_houses
 
-  resources :slot_machines
+  resources :slot_machines do
+    collection do
+      get :load_ma_reasons
+    end
+  end
 
   resources :users
   root :to => "welcome#index"
