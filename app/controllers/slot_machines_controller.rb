@@ -4,6 +4,7 @@ class SlotMachinesController < ApplicationController
   # GET /slot_machines
   # GET /slot_machines.json
   def index
+    @ma_reasons = MaReasonSlot.all
     @slot_machines = SlotMachine.all
   end
 
@@ -59,6 +60,13 @@ class SlotMachinesController < ApplicationController
       format.html { redirect_to slot_machines_url, notice: 'Slot machine was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def load_ma_reasons
+    @ma_reasons = MaReasonSlot.all
+    respond_to do |format|
+      format.js { render :action => 'load_ma_reasons' }
+    end    
   end
 
   private

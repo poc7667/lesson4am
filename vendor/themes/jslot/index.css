@@ -43,11 +43,12 @@ ul {
     width: 300px;
     line-height: 100px;
     text-align: center;
-    font-size: 70px;
-    font-weight: bold;
+    font-size: 26px;
+    /*font-weight: bold;*/
     /*color: #fff;*/
-    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.8);
-    font-family: 'Gravitas One', serif;
+    /*text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.8);*/
+    /*font-family: 'Gravitas One', serif;*/
+    font-family: arial;
     border-left: 1px solid #999;
 }
 

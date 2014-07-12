@@ -1,0 +1,4 @@
+<% %w(subjects actions reasons).each do |act_type| %>
+    $("#slot_machine").find("#<%= act_type %>").html('<%=j render partial: 'load_ma_reasons',
+      :locals => { :reasons => @ma_reasons.where(position: "subjects"), :act_type => act_type} %>')
+<% end %>
