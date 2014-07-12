@@ -1,23 +1,11 @@
 .copyright.clearfix
   .container
     .pull-left
-      %p Copyright © 2014 4am-lesson
+      %p Copyright © #{Date.current.year} 4am-Lesson
     / /.pull-left
     .pull-right
       %nav.footer
-        %ul.inline
-          %li
-            %a{href: "#"} Home
-          / %li
-          /   %a{href: "#"} Services
-          %li
-            %a{href: ".our-team"} Our Team
-          %li
-            %a{href: ".our-work"} Our Work
-          / %li
-          /   %a{href: "#"} Features
-          %li
-            %a{href: ".contact"} Contact
+        = render 'nav_links'
       / /nav.footer
     / /.pull-right
   / /.container
