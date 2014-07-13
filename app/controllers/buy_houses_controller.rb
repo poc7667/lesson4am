@@ -1,5 +1,6 @@
 class BuyHousesController < ApplicationController
   before_action :set_buy_house, only: [:show, :edit, :update, :destroy]
+  layout 'general'
 
   # GET /buy_houses
   # GET /buy_houses.json
