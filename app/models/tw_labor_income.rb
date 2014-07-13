@@ -1,4 +1,6 @@
 class TwLaborIncome < ActiveRecord::Base
+  include Finance
+
   def self.get_rank_by_income(gender, age, current_income)
     
     max = get_closest_larger("income", gender, age, current_income)
