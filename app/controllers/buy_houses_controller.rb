@@ -1,7 +1,7 @@
 class BuyHousesController < ApplicationController
   before_action :set_buy_house, only: [:show, :edit, :update, :destroy]
+  
   layout 'general'
-
   # GET /buy_houses
   # GET /buy_houses.json
   def index
@@ -27,31 +27,27 @@ class BuyHousesController < ApplicationController
   # POST /buy_houses.json
   def create
     @buy_house = BuyHouse.new(buy_house_params)    
-    binding.pry
-    new_hash = {}
-
-    buy_house_params.to_hash.each { |key, value| 
-        if value.to_i > 0
-          new_hash[key]=value.to_i 
-        else
-          new_hash[key] = value
-        end
-    } 
-    prediction = TwLaborIncome.new.get_prediction(
-        new_hash      
-        )
-    binding.pry
-
-    new_predict.get_prediction(params)
 
     respond_to do |format|
-      format.html { redirect_to action: "index" }
-      return
       if @buy_house.save
+        income_param = \
+          Hash[buy_house_params.to_hash.map{ |key, value| 
+              if value.to_i > 0
+                [key, value.to_i]
+              else
+                [key, value]
+              end
+          }] 
+        predicted_income = TwLaborIncome.new.get_prediction(income_param)
+        monthly_payment, total_payment = TwLaborIncome.load_payment(buy_house_params["house_price"].to_i,buy_house_params["loan_duration"].to_i)
+        print(monthly_payment, total_payment )
+        ap(view_context.number_to_currency(predicted_income))
+        ap(view_context.number_to_human(predicted_income))
+        return
         format.html { redirect_to @buy_house, notice: 'Buy house was successfully created.' }
         format.json { render :show, status: :created, location: @buy_house }
       else
-        format.html { render :new }
+        format.html { render :new ,error: @buy_house.errors.messages}
         format.json { render json: @buy_house.errors, status: :unprocessable_entity }
       end
     end
@@ -87,11 +83,10 @@ class BuyHousesController < ApplicationController
       @buy_house = BuyHouse.find(params[:id])
     end
 
-
-
-
     # Never trust parameters from the scary internet, only allow the white list through.
     def buy_house_params
-      params.require(:buy_house).permit(:user_id, :age, :gender, :monthly_income, :job, :expenditure)
+      params.require(:buy_house).permit(:user_id, :age, :gender,
+                                        :monthly_income, :job, :expenditure,
+                                        :house_price, :loan_duration)
     end
 end

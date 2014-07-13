@@ -2,10 +2,8 @@ class TwLaborIncome < ActiveRecord::Base
   include Finance
 
   def self.get_rank_by_income(gender, age, current_income)
-    
     max = get_closest_larger("income", gender, age, current_income)
     min = get_closest_smaller("income", gender, age, current_income)
-    binding.pry
     delta_x = (max.income - min.income)
     delta_y = (current_income - min.income)
 
@@ -21,7 +19,6 @@ class TwLaborIncome < ActiveRecord::Base
       ((accumulated_percentage-min.accumulated_percentage)/(max.accumulated_percentage-min.accumulated_percentage))
   end
 
-
   def self.get_closest_smaller(column_name, gender, age, value)
     where(gender: gender,age: age)
       .where("#{column_name} < ?", value)
@@ -36,16 +33,19 @@ class TwLaborIncome < ActiveRecord::Base
       .first    
   end
 
+  def self.load_payment(house_price, loan_duration)
+      rate = Rate.new(0.03, :apr, :duration => (loan_duration * 12))
+      amortization = Amortization.new(house_price, rate)    
+      return amortization.payment, amortization.payments.sum
+  end
+
   def get_prediction( user={}, end_age=65, year_weight=14 )
-      binding.pry
       rank = self.class.get_rank_by_income(user["gender"], user["age"], user["monthly_income"] )
-      annually_incomes = (user["age"]..end_age).map do |age|
-        year_weight*(TwLaborIncome.get_income_by_rank("female", age, rank))
+      monthly_incomes = (user["age"]..end_age).map do |age|
+        [age, TwLaborIncome.get_income_by_rank("female", age, rank)]
       end
-      total_income = annually_incomes.inject(0){ |sum, i| sum+i }
-      binding.pry
-
-
+      # total_incomes = annually_incomes.inject(0){ |sum, i| sum+i }
+      monthly_incomes
   end  
 
 end
