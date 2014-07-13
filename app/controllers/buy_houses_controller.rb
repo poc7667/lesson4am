@@ -5,7 +5,8 @@ class BuyHousesController < ApplicationController
   # GET /buy_houses
   # GET /buy_houses.json
   def index
-    @buy_houses = BuyHouse.all
+    redirect_to action: :new
+    # @buy_houses = BuyHouse.all
   end
 
   # GET /buy_houses/1
