@@ -72,3 +72,5 @@ gem "simple-navigation"
 gem "simple-navigation-bootstrap"
 # https://github.com/wkranec/finance
 gem "finance"
+
+gem 'chartkick'
