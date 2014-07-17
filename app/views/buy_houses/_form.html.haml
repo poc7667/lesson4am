@@ -21,7 +21,11 @@
         %label.col-sm-3.control-label.no-padding-right{for: "form-field-1"} Gender
         .col-sm-9
           - genders = TwLaborIncome.uniq.pluck(:gender)
-          = f.select :gender, genders.map{|g| [g, g]}
+          - genders.each do |g|
+            = f.radio_button :gender, g, :checked => true
+            = g
+          / = f.check_box :gender, genders.map{|g| [g, g]}
+          / = f.select :gender, genders.map{|g| [g, g]}
   .space-4
 
   .form-group
@@ -44,7 +48,7 @@
   .form-group
     .form-inputs
       .div.form-group
-        %label.col-sm-3.control-label.no-padding-right{for: "form-field-1"} House Price
+        %label.col-sm-3.control-label.no-padding-right{for: "form-field-1"} Loan amount
         .col-sm-9
           - prices = [5000000,10000000,15000000,20000000,30000000,50000000,100000000]
           = f.select :house_price, prices.map{|g| [number_to_human(g), g]}
@@ -63,4 +67,4 @@
 
   .clearfix.form-actions
     .col-md-offset-3.col-md-9
-      = f.submit 'save', class: 'btn btn-info'
+      = f.submit 'GO', class: 'btn btn-info'

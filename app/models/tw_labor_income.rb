@@ -34,18 +34,21 @@ class TwLaborIncome < ActiveRecord::Base
   end
 
   def self.load_payment(house_price, loan_duration)
-      rate = Rate.new(0.03, :apr, :duration => (loan_duration * 12))
+      rate = Rate.new(0.02, :apr, :duration => (loan_duration * 12))
       amortization = Amortization.new(house_price, rate)    
-      return amortization.payment, amortization.payments.sum
+      return -amortization.payment, -amortization.payments.sum
   end
 
   def get_prediction( user={}, end_age=65, year_weight=14 )
-      rank = self.class.get_rank_by_income(user["gender"], user["age"], user["monthly_income"] )
-      monthly_incomes = (user["age"]..end_age).map do |age|
-        [age, TwLaborIncome.get_income_by_rank("female", age, rank)]
+      rank = self.class.get_rank_by_income(user.gender, user.age, user.monthly_income )
+      # ret_chart << ["year", "in", "out"]
+      (user.age..end_age).map do |age|
+        # {name: "#{age.to_s} year" ,data: TwLaborIncome.get_income_by_rank(user.gender, age, rank )}
+        # ["#{age} year-old", TwLaborIncome.get_income_by_rank(user.gender, age, rank ), -100]
+        ["#{age} 歲", TwLaborIncome.get_income_by_rank(user.gender, age, rank )]
       end
-      # total_incomes = annually_incomes.inject(0){ |sum, i| sum+i }
-      monthly_incomes
+      # binding.pry
+      # ret_chart = [{name: "first", data: ret_chart}]
   end  
 
 end

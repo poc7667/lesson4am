@@ -12,11 +12,13 @@ class BuyHousesController < ApplicationController
   # GET /buy_houses/1
   # GET /buy_houses/1.json
   def show
+    # monthly_payment, total_payment = TwLaborIncome.load_payment(buy_house_params["house_price"].to_i,buy_house_params["loan_duration"].to_i)    
+    @predicted_income = TwLaborIncome.new.get_prediction(@buy_house)
   end
-
   # GET /buy_houses/new
   def new
     @buy_house = BuyHouse.new
+
   end
 
   # GET /buy_houses/1/edit
@@ -27,7 +29,6 @@ class BuyHousesController < ApplicationController
   # POST /buy_houses.json
   def create
     @buy_house = BuyHouse.new(buy_house_params)    
-
     respond_to do |format|
       if @buy_house.save
         income_param = \
@@ -38,12 +39,6 @@ class BuyHousesController < ApplicationController
                 [key, value]
               end
           }] 
-        predicted_income = TwLaborIncome.new.get_prediction(income_param)
-        monthly_payment, total_payment = TwLaborIncome.load_payment(buy_house_params["house_price"].to_i,buy_house_params["loan_duration"].to_i)
-        print(monthly_payment, total_payment )
-        ap(view_context.number_to_currency(predicted_income))
-        ap(view_context.number_to_human(predicted_income))
-        return
         format.html { redirect_to @buy_house, notice: 'Buy house was successfully created.' }
         format.json { render :show, status: :created, location: @buy_house }
       else
