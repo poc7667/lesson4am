@@ -74,3 +74,5 @@ gem "simple-navigation-bootstrap"
 gem "finance"
 
 gem 'chartkick'
+
+gem 'squeel', github: 'kiela/squeel'
