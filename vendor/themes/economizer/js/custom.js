@@ -148,6 +148,9 @@ jQuery(document).ready(function($) {
 
 	/*----------- Navigation -----------*/
 	$('nav.main a, nav.footer a').click(function(e) {
+		if ($(this).attr('omniauth')){
+            return 0;
+        }   
 		e.preventDefault();
 		$target = $(this).attr('href');
 		$padding = $($target).css('padding-top');
