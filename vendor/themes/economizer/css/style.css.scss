@@ -419,6 +419,16 @@ nav.main {
   float: right;
   ul {
     margin: 0;
+    omniauth{
+      li{
+        a{
+          /*border-left: thick solid #FFF;*/
+          border-left: thick solid rgba(255, 255, 255, 0.1);
+          /*display:block;*/
+          line-height: 24px;        
+        }
+      }
+    }    
     li {
       margin: 0;
       a {
