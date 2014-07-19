@@ -1,4 +1,5 @@
 jQuery(document).ready(function($) {
+jQuery(document).ready(function($) {
 
 	function isMobile() {
 		$width = $('.container').css('width');
@@ -148,6 +149,10 @@ jQuery(document).ready(function($) {
 
 	/*----------- Navigation -----------*/
 	$('nav.main a, nav.footer a').click(function(e) {
+		// workaround for omniauth link
+        if ($(this).attr('omniauth')){
+            return 0;
+        }		
 		e.preventDefault();
 		$target = $(this).attr('href');
 		$padding = $($target).css('padding-top');
