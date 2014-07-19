@@ -1,23 +1,40 @@
-%p#notice= notice
-
-%p
-  %b User:
-  = @buy_house.user_id
-%p
-  %b Age:
-  = @buy_house.age
-%p
-  %b Gender:
-  = @buy_house.gender
-%p
-  %b Monthly income:
-  = @buy_house.monthly_income
-%p
-  %b Job:
-  = @buy_house.job
-%p
-  %b Expenditure:
-  = @buy_house.expenditure
+= javascript_include_tag "//www.google.com/jsapi", "chartkick"
+%div.content-section-a
+  %p#notice= notice
+  - lifelong_income = @predicted_income.map{|item| item.last}[0,@buy_house.loan_duration].inject(0){ |sum, i| sum+(i*16) }
+  - monthly_payment, total_payment = TwLaborIncome.load_payment(@buy_house.house_price, @buy_house.loan_duration)
+  %h2 House Price
+  %h3 Monthly payment #{number_to_human monthly_payment}
+  %h3 Duration #{@buy_house.loan_duration} year
+  %h3 Original Loan amount #{number_to_human @buy_house.house_price}
+  %h3 Total payment #{number_to_human total_payment}
+  - pie_data = [["總房貸",total_payment],["總收入", lifelong_income]]
+  = pie_chart pie_data
+  - balances = @predicted_income.each_with_index.map do |item, i|
+    - if i <= @buy_house.loan_duration
+      - [item.first, (item.last.to_f)*(16.0/12.0) - monthly_payment]
+  - @predicted_income.collect!{|item| [item.first, item.last*(4.0/3.0)]}
+  - final_show = [{name: "月收入", data: @predicted_income[0,@buy_house.loan_duration]},
+                  {name: "月盈餘", data: balances[0, @buy_house.loan_duration]}]
+  = column_chart final_show
+/ %p
+/   %b User:
+/   = @buy_house.user_id
+/ %p
+/   %b Age:
+/   = @buy_house.age
+/ %p
+/   %b Gender:
+/   = @buy_house.gender
+/ %p
+/   %b Monthly income:
+/   = @buy_house.monthly_income
+/ %p
+/   %b Job:
+/   = @buy_house.job
+/ %p
+/   %b Expenditure:
+/   = @buy_house.expenditure
 
 = link_to 'Edit', edit_buy_house_path(@buy_house)
 \|
