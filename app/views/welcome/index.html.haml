@@ -44,14 +44,19 @@
             / enquiries@economiser.com
           %hr/
         .span6.offset1
-          %form#contact{action: "form.php", method: "POST"}
+          / %form#contact{action: "form.php", method: "POST"}
+          = form_tag('/mails/contact_us', :method => :post) do
             .row-fluid
-              .span6
-                %input#name.req{name: "name", placeholder: "Name...", type: "text"}/
-              / /.span6
-              .span6
-                %input#email.req{name: "name", placeholder: "Email...", type: "text"}/
-              / /.span6
+              - if current_user.nil?
+                .span6
+                  %input#name.req{name: "name", placeholder: "Name...", type: "text"}/
+                .span6
+                  %input#email.req{name: "name", placeholder: "Email...", type: "text"}/
+              - else
+                .span6
+                  %input#name.req{name: "name", placeholder: "Name...", type: "text", value: current_user.name}/
+                .span6
+                  %input#email.req{name: "name", placeholder: "Email...", type: "text" ,value: current_user.email}/
             / /.row-fluid
             .row-fluid
               .span12
