@@ -79,3 +79,4 @@ gem "finance"
 gem 'chartkick'
 
 gem 'squeel', github: 'kiela/squeel'
+gem 'quiet_assets', group: :development
