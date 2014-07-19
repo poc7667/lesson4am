@@ -8,6 +8,12 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :mails do
+      collection do
+          post :contact_us
+      end
+  end
+
   # resources :users
   root :to => "welcome#index"
 
