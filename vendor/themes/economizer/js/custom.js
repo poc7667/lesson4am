@@ -151,7 +151,7 @@ jQuery(document).ready(function($) {
 		if ($(this).attr('omniauth')){
             return 0;
         }   
-		e.preventDefault();
+		e.preventDefault();		
 		$target = $(this).attr('href');
 		$padding = $($target).css('padding-top');
 		$padding = $padding.substring(0, $padding.length - 2);
@@ -177,7 +177,7 @@ jQuery(document).ready(function($) {
 	/*----------- Get started button -----------*/
 	$('.get-started').click(function(e) {
 		e.preventDefault();
-		$target = $('.features');
+		$target = $(this).attr('href');		
 		$padding = $($target).css('padding-top');
 		$padding = $padding.substring(0, $padding.length - 2);
 		$padding = parseInt($padding);
