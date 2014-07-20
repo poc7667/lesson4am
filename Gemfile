@@ -70,3 +70,13 @@ end
 
 gem "simple-navigation"
 gem "simple-navigation-bootstrap"
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-facebook'
+# https://github.com/wkranec/finance
+gem "finance"
+
+gem 'chartkick'
+
+gem 'squeel', github: 'kiela/squeel'
+gem 'quiet_assets', group: :development

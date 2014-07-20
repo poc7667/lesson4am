@@ -25,12 +25,24 @@ Rails.application.configure do
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
-  config.assets.debug = true
+  config.assets.debug = false
 
   # Adds additional error checking when serving assets at runtime.
   # Checks for improperly declared sprockets dependencies.
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
+
+  # Add for mailgun smtp
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :authentication => :plain,
+    :address => "smtp.mailgun.org",
+    :port => 587,
+    :domain => ENV['mailgun_domain'],
+    :user_name => "postmaster@#{ENV['mailgun_domain']}",
+    :password => ENV['mailgun_passwd']
+  }
+
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
