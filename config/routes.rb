@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :pair_groups
+
   # devise_for :users
   resources :buy_houses
 
