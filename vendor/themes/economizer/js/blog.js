@@ -134,12 +134,18 @@ $(window).load(function() {
 		},
 
 		getPositions = function() {
-			$section.show();
-			$sectionPosition = $section.offset().top;
-			$section.hide();
-			$buttonHeight = $button.actual('innerHeight') + 30;
-			$scrollLocation = ($sectionPosition - $buttonHeight);
-			$blogPosition = $blog.offset().top;
+			try{
+				$section.show();
+				$sectionPosition = $section.offset().top;
+				$section.hide();
+				$buttonHeight = $button.actual('innerHeight') + 30;
+				$scrollLocation = ($sectionPosition - $buttonHeight);
+				$blogPosition = $blog.offset().top;
+			}
+			catch(e){
+				console.log(e);
+				return false
+			}
 		},
 
 		loader = function(index) {
