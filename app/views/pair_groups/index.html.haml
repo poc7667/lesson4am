@@ -88,22 +88,6 @@
         $(document).ready(function() {
           $("#male_list").dynamiclist();  
           $("#female_list").dynamiclist();  
-          // display form submit data
-          $("form").submit(function(event) {
-            event.preventDefault();
-            var data = "";
-            $(this).find("input, select").each(function() {
-              var element = $(this);
-              if (element.attr("type") != "submit") {
-                data += element.attr("name");
-                data += "="
-                data += element.attr("value");
-                data += "; "
-              }
-            });
-            alert(data);
-            location.reload(true);
-          });
         });
       })(jQuery);
 
