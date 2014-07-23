@@ -43,7 +43,6 @@
 
             if (length < settings.maxSize) {
                 // clone new item from first item
-                debugger;
                 var item = list.find("." + settings.itemClass + ":first").clone(
                     settings.withEvents);
 
@@ -122,7 +121,8 @@
         }
         
         var init = function(list) {
-           
+            console.log(list)
+
             // remove first item's remove link
             list.find("." + settings.itemClass + ":first " + "." + settings.removeClass).hide()           
            
