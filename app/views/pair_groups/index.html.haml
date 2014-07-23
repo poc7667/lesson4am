@@ -1,29 +1,157 @@
-%h1 Listing pair_groups
+%script{src: asset_path("pair_group/js/jquery.dynamiclist.js")}
+.row
+  .col-xs-12.col-sm-6.widget-container-col.ui-sortable
+    .widget-box.ui-sortable-handle
+      .widget-header.widget-header-large
+        %h4.widget-title Create a Group
+      .widget-body
+        .widget-main
+          %form.form-horizontal
+            .control-group
+              %label.control-label Group Name
+              .controls
+                %input{name: "partyName", placeholder: "Party Name", type: "text"}/
+            .control-group
+              %label.control-label Male List
+              #example1.controls
+                .list-item.male
+                  %input{name: "maleList[0].name", placeholder: "Guest Name", type: "text"}/
+                  %a.list-remove.btn-minier.btn{href: "#", style: "display: none;"}
+                    %i.icon-minus
+                    Remove 
+                .form-group
+                  / %label.col-sm-3.control-label.no-padding-right{for: "form-field-2"} Password Field
+                  %br
+                  .col-sm-9
+                    %a.list-add.btn.btn-min{href: "#"}
+                      %i.icon-plus
+                      Add 
+              %label.control-label Female List
+              #example1.controls
+                .list-item.female
+                  %input{name: "femaleList[0].name", placeholder: "Guest Name", type: "text"}/
+                  %a.list-remove.btn-minier.btn{href: "#", style: "display: none;"}
+                    %i.icon-minus
+                    Remove 
+                .form-group
+                  / %label.col-sm-3.control-label.no-padding-right{for: "form-field-2"} Password Field
+                  %br
+                  .col-sm-9
+                    %a.list-add.btn.btn-min{href: "#"}
+                      %i.icon-plus
+                      Add                       
+                  
+            .control-group
+              .controls
+                %input.btn.btn-primary.btn-large{type: "submit", value: "Process Example 1"}/
 
-%table
-  %tr
-    %th User
-    %th Title
-    %th Description
-    %th Text
-    %th Members
-    %th Text
-    %th
-    %th
-    %th
+  .col-xs-12.col-sm-3.widget-container-col.ui-sortable
+    .widget-box.ui-sortable-handle
+      .widget-header.widget-header-large
+        %h4.widget-title Femal Members
+        .widget-toolbar
+          %a{"data-action" => "settings", href: "#"}
+            %i.ace-icon.fa.fa-cog
+          %a{"data-action" => "reload", href: "#"}
+            %i.ace-icon.fa.fa-refresh
+          %a{"data-action" => "collapse", href: "#"}
+            %i.ace-icon.fa.fa-chevron-up
+          %a{"data-action" => "close", href: "#"}
+            %i.ace-icon.fa.fa-times
+      .widget-body
+        .widget-main
+          .list-item
+            %input{name: "femaleList[0].name", placeholder: "Guest Name", type: "text"}/
+            %a.list-remove.btn.btn-small{href: "#", style: "display: none;"}
+              %i.icon-minus
+              Remove Guest
+          %a.list-add.btn.btn-small{href: "#"}
+            %i.icon-plus
+            Add Guest                              
 
-  - @pair_groups.each do |pair_group|
-    %tr
-      %td= pair_group.user_id
-      %td= pair_group.title
-      %td= pair_group.description
-      %td= pair_group.text
-      %td= pair_group.members
-      %td= pair_group.text
-      %td= link_to 'Show', pair_group
-      %td= link_to 'Edit', edit_pair_group_path(pair_group)
-      %td= link_to 'Destroy', pair_group, :method => :delete, :data => { :confirm => 'Are you sure?' }
+  .col-xs-12.col-sm-3.widget-container-col.ui-sortable
+    .widget-box.ui-sortable-handle
+      .widget-header.widget-header-large
+        %h4.widget-title Your Groups
+        .widget-toolbar
+          %a{"data-action" => "settings", href: "#"}
+            %i.ace-icon.fa.fa-cog
+          %a{"data-action" => "reload", href: "#"}
+            %i.ace-icon.fa.fa-refresh
+          %a{"data-action" => "collapse", href: "#"}
+            %i.ace-icon.fa.fa-chevron-up
+          %a{"data-action" => "close", href: "#"}
+            %i.ace-icon.fa.fa-times
+      .widget-body
+        .widget-main
+          %p.alert.alert-info
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo massa sed ipsum porttitor facilisis.
 
-%br
 
-= link_to 'New Pair group', new_pair_group_path
+:javascript
+  $(document).ready(function() {
+      $("#list").dynamiclist();
+  });
+:javascript
+  (function($) {
+        $(document).ready(function() {
+          $("#example1").dynamiclist();  
+          // display form submit data
+          $("form").submit(function(event) {
+            event.preventDefault();
+            var data = "";
+            $(this).find("input, select").each(function() {
+              var element = $(this);
+              if (element.attr("type") != "submit") {
+                data += element.attr("name");
+                data += "="
+                data += element.attr("value");
+                data += "; "
+              }
+            });
+            alert(data);
+            location.reload(true);
+          });
+        });
+      })(jQuery);
+
+:javascript
+  var _gaq = _gaq || [];
+    _gaq.push(["_setAccount", "UA-39443744-1"]);
+    _gaq.push(["_trackPageview"]);
+
+    (function() {
+    var ga = document.createElement("script"); ga.type = "text/javascript"; ga.async = true;
+    ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";
+   var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ga, s);
+  })();  
+
+/ %h1 Listing pair_groups
+
+/ %table
+/   %tr
+/     %th User
+/     %th Title
+/     %th Description
+/     %th Text
+/     %th Members
+/     %th Text
+/     %th
+/     %th
+/     %th
+
+/   - @pair_groups.each do |pair_group|
+/     %tr
+/       %td= pair_group.user_id
+/       %td= pair_group.title
+/       %td= pair_group.description
+/       %td= pair_group.text
+/       %td= pair_group.members
+/       %td= pair_group.text
+/       %td= link_to 'Show', pair_group
+/       %td= link_to 'Edit', edit_pair_group_path(pair_group)
+/       %td= link_to 'Destroy', pair_group, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+/ %br
+
+/ = link_to 'New Pair group', new_pair_group_path
