@@ -1,21 +1,26 @@
 %script{src: asset_path("pair_group/js/jquery.dynamiclist.js")}
 .row
-  .col-xs-12.col-sm-6.widget-container-col.ui-sortable
+  .col-xs-12.col-sm-4.widget-container-col.ui-sortable
     .widget-box.ui-sortable-handle
       .widget-header.widget-header-large
         %h4.widget-title Create a Group
       .widget-body
         .widget-main
-          %form.form-horizontal
+          %form.form-horizontal{id: "create_group_form"}
             .control-group
               %label.control-label Group Name
               .controls
-                %input{name: "partyName", placeholder: "Party Name", type: "text"}/
+                %input.form-control{name: "groupName"}
+            .control-group
+              %label.control-label Group Description
+              .controls
+                %textarea.form-control{name: "groupDescription"}
+
             .control-group
               %label.control-label Male List
               #male_list.controls
                 .list-item.male
-                  %input{name: "maleList[0].name", placeholder: "Guest Name", type: "text"}/
+                  %input{name: "male[0].name", placeholder: "Guest Name", type: "text"}/
                   %a.list-remove.btn-minier.btn{href: "#", style: "display: none;"}
                     %i.icon-minus
                     Remove 
@@ -29,7 +34,7 @@
               %label.control-label Female List
               #female_list.controls
                 .list-item.female
-                  %input{name: "femaleList[0].name", placeholder: "Guest Name", type: "text"}/
+                  %input{name: "female[0].name", placeholder: "Guest Name", type: "text"}/
                   %a.list-remove.btn-minier.btn{href: "#", style: "display: none;"}
                     %i.icon-minus
                     Remove 
@@ -43,12 +48,23 @@
                   
             .control-group
               .controls
-                %input.btn.btn-primary.btn-large{type: "submit", value: "Process Example 1"}/
+                %input.btn.btn-primary.btn-large{type: "submit", value: "Create Group"}/
 
   .col-xs-12.col-sm-3.widget-container-col.ui-sortable
     .widget-box.ui-sortable-handle
       .widget-header.widget-header-large
-        %h4.widget-title Femal Members
+        %h4.widget-title Your Groups
+      .widget-body
+        .widget-main.center
+          - @pair_groups.each do | group |
+            .control-group
+            %br
+              %input.btn.btn-primary{value: "#{group.title} GO"}
+
+  .col-xs-12.col-sm-3.widget-container-col.ui-sortable
+    .widget-box.ui-sortable-handle
+      .widget-header.widget-header-large
+        %h4.widget-title Results
       .widget-body
         .widget-main
           .list-item
@@ -60,23 +76,6 @@
             %i.icon-plus
             Add Guest                              
 
-  .col-xs-12.col-sm-3.widget-container-col.ui-sortable
-    .widget-box.ui-sortable-handle
-      .widget-header.widget-header-large
-        %h4.widget-title Your Groups
-        .widget-toolbar
-          %a{"data-action" => "settings", href: "#"}
-            %i.ace-icon.fa.fa-cog
-          %a{"data-action" => "reload", href: "#"}
-            %i.ace-icon.fa.fa-refresh
-          %a{"data-action" => "collapse", href: "#"}
-            %i.ace-icon.fa.fa-chevron-up
-          %a{"data-action" => "close", href: "#"}
-            %i.ace-icon.fa.fa-times
-      .widget-body
-        .widget-main
-          %p.alert.alert-info
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo massa sed ipsum porttitor facilisis.
 
 
 :javascript

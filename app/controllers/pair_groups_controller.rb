@@ -4,7 +4,7 @@ class PairGroupsController < ApplicationController
   # GET /pair_groups
   # GET /pair_groups.json
   def index
-    @pair_groups = PairGroup.all
+    @pair_groups = PairGroup.where(user_id: current_user.id)
   end
 
   # GET /pair_groups/1
@@ -20,6 +20,26 @@ class PairGroupsController < ApplicationController
   # GET /pair_groups/1/edit
   def edit
   end
+
+  def add_group_list
+    @pair_group = PairGroup.new(
+      user_id: current_user.id,
+      title: params["groupName"],
+      members: {male: params["male"], female: params["female"]}.to_s
+    )
+
+    respond_to do |format|
+      if @pair_group.save      
+        format.json { head :ok }
+      else
+        format.json { render :json => @pair_group.errors}
+      end
+    end
+  end
+
+  def redirect_to_index
+    render js: "window.location = '#{pair_groups_path}'"
+  end  
 
   # POST /pair_groups
   # POST /pair_groups.json

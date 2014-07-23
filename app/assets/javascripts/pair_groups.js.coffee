@@ -7,14 +7,11 @@ $(document).ready ->
     $.ajax
       type: 'GET'
       url:  '/pair_groups/redirect_to_index'       
+    return
 
   $("form").submit (event) ->
     event.preventDefault()
-    group_list = {"male":[],
-                  "female":[], 
-                  "groupName":'nil', 
-                  "groupDescription": 'nil',
-                  'action': 'add_group'}
+    group_list = {"male":[],"female":[], "groupName":'nil', "groupDescription": 'nil','action': 'add_group'}
 
     $(this).find("input").each ->
       genderRegexp = /(^\w+)/g;
