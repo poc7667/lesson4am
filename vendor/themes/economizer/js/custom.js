@@ -352,6 +352,11 @@ $(window).load(function() {
 		getSections = function() {
 			$mainLinks.each(function() {
 				$target = $(this).attr('href');
+				var attr = $(this).attr('omniauth');
+				if (typeof attr !== typeof undefined && attr !== false) {
+					console.log(attr);
+					return true;
+				}
 				$sections.push($($target));
 			})	
 		},
