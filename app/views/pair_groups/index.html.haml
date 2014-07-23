@@ -13,7 +13,7 @@
                 %input{name: "partyName", placeholder: "Party Name", type: "text"}/
             .control-group
               %label.control-label Male List
-              #example1.controls
+              #male_list.controls
                 .list-item.male
                   %input{name: "maleList[0].name", placeholder: "Guest Name", type: "text"}/
                   %a.list-remove.btn-minier.btn{href: "#", style: "display: none;"}
@@ -27,7 +27,7 @@
                       %i.icon-plus
                       Add 
               %label.control-label Female List
-              #example1.controls
+              #female_list.controls
                 .list-item.female
                   %input{name: "femaleList[0].name", placeholder: "Guest Name", type: "text"}/
                   %a.list-remove.btn-minier.btn{href: "#", style: "display: none;"}
@@ -49,15 +49,6 @@
     .widget-box.ui-sortable-handle
       .widget-header.widget-header-large
         %h4.widget-title Femal Members
-        .widget-toolbar
-          %a{"data-action" => "settings", href: "#"}
-            %i.ace-icon.fa.fa-cog
-          %a{"data-action" => "reload", href: "#"}
-            %i.ace-icon.fa.fa-refresh
-          %a{"data-action" => "collapse", href: "#"}
-            %i.ace-icon.fa.fa-chevron-up
-          %a{"data-action" => "close", href: "#"}
-            %i.ace-icon.fa.fa-times
       .widget-body
         .widget-main
           .list-item
@@ -95,7 +86,8 @@
 :javascript
   (function($) {
         $(document).ready(function() {
-          $("#example1").dynamiclist();  
+          $("#male_list").dynamiclist();  
+          $("#female_list").dynamiclist();  
           // display form submit data
           $("form").submit(function(event) {
             event.preventDefault();
