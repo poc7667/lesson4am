@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b User:
+  = @pair_group.user_id
+%p
+  %b Title:
+  = @pair_group.title
+%p
+  %b Description:
+  = @pair_group.description
+%p
+  %b Text:
+  = @pair_group.text
+%p
+  %b Members:
+  = @pair_group.members
+%p
+  %b Text:
+  = @pair_group.text
+
+= link_to 'Edit', edit_pair_group_path(@pair_group)
+\|
+= link_to 'Back', pair_groups_path

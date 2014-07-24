@@ -1,0 +1,13 @@
+= simple_form_for(@pair_group) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :user_id
+    = f.input :title
+    = f.input :description
+    = f.input :text
+    = f.input :members
+    = f.input :text
+
+  .form-actions
+    = f.button :submit
