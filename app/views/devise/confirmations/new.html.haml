@@ -1,0 +1,21 @@
+.col-sm-5
+  .widget-box
+    .widget-header
+      %h4.widget-title Login with Facebook
+    .widget-body
+      .widget-main.no-padding
+        %form
+            %button.btn.btn-sm.btn-success{type: "button"}
+            = link_to "Login with Facebook" ,  user_omniauth_authorize_path(:facebook), "omniauth" => "true"
+              Submit
+              %i.ace-icon.fa.fa-arrow-right.icon-on-right.bigger-110
+
+/ %h2 Resend confirmation instructions
+/ = form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f|
+/   = devise_error_messages!
+/   %div
+/     = f.label :email
+/     %br/
+/     = f.email_field :email, autofocus: true
+/   %div= f.submit "Resend confirmation instructions"
+/ = render "devise/shared/links"
