@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :photos
+
   resources :pair_groups do
     collection do
       post :add_group_list

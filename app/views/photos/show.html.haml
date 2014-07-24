@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b User:
+  = @photo.user_id
+%p
+  %b Title:
+  = @photo.title
+%p
+  %b Description:
+  = @photo.description
+%p
+  %b Category:
+  = @photo.category
+%p
+  %b Img path:
+  = @photo.img_path
+%p
+  %b Resized img path:
+  = @photo.resized_img_path
+
+= link_to 'Edit', edit_photo_path(@photo)
+\|
+= link_to 'Back', photos_path
