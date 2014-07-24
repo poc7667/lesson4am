@@ -5,7 +5,11 @@ class PairGroupsController < ApplicationController
   # GET /pair_groups
   # GET /pair_groups.json
   def index
-    @pair_groups = PairGroup.where(user_id: current_user.id)
+    begin
+      @pair_groups = PairGroup.where(user_id: current_user.id)
+    rescue Exception => e
+      raise CanCan::AccessDenied
+    end
   end
 
   # GET /pair_groups/1
@@ -38,8 +42,7 @@ class PairGroupsController < ApplicationController
   end
 
   def redirect_to_index
-    render js: "window.location = '#{pair_groups_path}'"
-    render html: 
+    render js: "window.location = '#{pair_groups_path}'"    
   end 
 
   def generate_pairs
