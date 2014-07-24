@@ -23,12 +23,12 @@
                   %input{name: "male[0].name", placeholder: "Guest Name", type: "text"}/
                   %a.list-remove.btn-minier.btn{href: "#", style: "display: none;"}
                     %i.icon-minus
-                    Remove 
+                    
                 .form-group
                   / %label.col-sm-3.control-label.no-padding-right{for: "form-field-2"} Password Field
                   %br
                   .col-sm-9
-                    %a.list-add.btn.btn-min{href: "#"}
+                    %a.list-add.btn.btn-white.btn-inverse.btn-sm{href: "#"}
                       %i.icon-plus
                       Add 
               %label.control-label Female List
@@ -37,12 +37,12 @@
                   %input{name: "female[0].name", placeholder: "Guest Name", type: "text"}/
                   %a.list-remove.btn-minier.btn{href: "#", style: "display: none;"}
                     %i.icon-minus
-                    Remove 
+                    
                 .form-group
                   / %label.col-sm-3.control-label.no-padding-right{for: "form-field-2"} Password Field
                   %br
                   .col-sm-9
-                    %a.list-add.btn.btn-min{href: "#"}
+                    %a.list-add.btn.btn-white.btn-inverse.btn-sm{href: "#"}
                       %i.icon-plus
                       Add                       
                   
@@ -55,11 +55,24 @@
       .widget-header.widget-header-large
         %h4.widget-title Your Groups
       .widget-body
-        .widget-main.center
-          - @pair_groups.each do | group |
+        .widget-main.right
+          .control-group
+          %br
+          = form_tag generate_pairs_pair_groups_path do
             .control-group
+              %label.control-label Group Name
+              = select_tag 'group_id', options_for_select(@pair_groups.collect{ |g| [g.title, g.id] })
             %br
-              %input.btn.btn-primary{value: "#{group.title} GO"}
+            .control-group
+              %label.control-label 
+              - [["numbers_of_groups", "總共分組數"],["numbers_in_groups", "每組人數"]].each_with_index do |(pair_setting, name), i|
+                = label_tag  do
+                  = radio_button_tag "pair_setting", pair_setting, false
+                  = name
+
+              = text_field_tag "numbers", nil , :placeholder => "Number"
+            .space-4  
+            = submit_tag "GO", class: 'btn btn-info'
 
   .col-xs-12.col-sm-3.widget-container-col.ui-sortable
     .widget-box.ui-sortable-handle

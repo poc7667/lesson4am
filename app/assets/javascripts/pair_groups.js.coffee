@@ -9,7 +9,7 @@ $(document).ready ->
       url:  '/pair_groups/redirect_to_index'       
     return
 
-  $("form").submit (event) ->
+  $("#create_group_form").submit (event) ->
     event.preventDefault()
     group_list = {"male":[],"female":[], "groupName":'nil', "groupDescription": 'nil','action': 'add_group'}
 

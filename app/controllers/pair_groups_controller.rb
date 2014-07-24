@@ -1,5 +1,6 @@
 class PairGroupsController < ApplicationController
   before_action :set_pair_group, only: [:show, :edit, :update, :destroy]
+  include PairMatcher
 
   # GET /pair_groups
   # GET /pair_groups.json
@@ -27,7 +28,6 @@ class PairGroupsController < ApplicationController
       title: params["groupName"],
       members: {male: params["male"], female: params["female"]}.to_s
     )
-
     respond_to do |format|
       if @pair_group.save      
         format.json { head :ok }
@@ -39,7 +39,17 @@ class PairGroupsController < ApplicationController
 
   def redirect_to_index
     render js: "window.location = '#{pair_groups_path}'"
-  end  
+    render html: 
+  end 
+
+  def generate_pairs
+    Drawer.new(
+      PairGroup.find_by_id(params["group_id"]), 
+      params["pair_setting"],
+      params["numbers"].to_i
+    )
+    redirect_to_index
+  end 
 
   # POST /pair_groups
   # POST /pair_groups.json
