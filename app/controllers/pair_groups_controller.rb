@@ -51,7 +51,7 @@ class PairGroupsController < ApplicationController
       params["pair_setting"],
       params["numbers"].to_i
     )
-    redirect_to_index
+    binding.pry
   end 
 
   # POST /pair_groups

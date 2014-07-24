@@ -58,7 +58,7 @@
         .widget-main.right
           .control-group
           %br
-          = form_tag generate_pairs_pair_groups_path do
+          = form_tag generate_pairs_pair_groups_path, :remote => true do
             .control-group
               %label.control-label Group Name
               = select_tag 'group_id', options_for_select(@pair_groups.collect{ |g| [g.title, g.id] })
