@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  resources :pair_groups do
+    collection do
+      post :add_group_list
+      get :redirect_to_index
+      get :generate_pairs
+      post :generate_pairs
+    end
+  end
+
   # devise_for :users
   resources :buy_houses
 
