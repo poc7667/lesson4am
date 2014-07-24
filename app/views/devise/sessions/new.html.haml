@@ -1,0 +1,9 @@
+.col-sm-5
+  .widget-box
+    .widget-header
+      %h4.widget-title Login with Facebook
+    .widget-body
+      .widget-main.no-padding
+        %form.center
+          = link_to "Login with Facebook", user_omniauth_authorize_path(:facebook), "omniauth" => "true", |
+            :class => "btn btn-success"
