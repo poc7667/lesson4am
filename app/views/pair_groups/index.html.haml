@@ -132,3 +132,9 @@
 
 / = link_to 'New Pair group', new_pair_group_path
 >>>>>>> develop
+  (function($) {
+        $(document).ready(function() {
+          $("#male_list").dynamiclist();  
+          $("#female_list").dynamiclist();  
+        });
+      })(jQuery);
