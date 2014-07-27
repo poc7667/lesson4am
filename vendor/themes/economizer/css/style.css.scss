@@ -1682,6 +1682,8 @@ textarea {
       left: auto;
       margin-left: 0;
       position: relative;
+      overflow: hidden;
+      white-space: nowrap;      
     }
   }
   a.logo {
