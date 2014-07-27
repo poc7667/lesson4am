@@ -1,3 +1,4 @@
+%script{src: asset_path("pair_group/js/jquery.dynamiclist.min.js")}
 .row
   .col-xs-12.col-sm-4.widget-container-col.ui-sortable
     .widget-box.ui-sortable-handle
@@ -89,8 +90,6 @@
             Add Guest                              
 
 
-
-
 %form
   #list
     .list-item
@@ -102,3 +101,34 @@
   $(document).ready(function() {
       $("#list").dynamiclist();
   });
+
+/ %h1 Listing pair_groups
+
+/ %table
+/   %tr
+/     %th User
+/     %th Title
+/     %th Description
+/     %th Text
+/     %th Members
+/     %th Text
+/     %th
+/     %th
+/     %th
+
+/   - @pair_groups.each do |pair_group|
+/     %tr
+/       %td= pair_group.user_id
+/       %td= pair_group.title
+/       %td= pair_group.description
+/       %td= pair_group.text
+/       %td= pair_group.members
+/       %td= pair_group.text
+/       %td= link_to 'Show', pair_group
+/       %td= link_to 'Edit', edit_pair_group_path(pair_group)
+/       %td= link_to 'Destroy', pair_group, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+/ %br
+
+/ = link_to 'New Pair group', new_pair_group_path
+>>>>>>> develop
