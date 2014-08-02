@@ -1,5 +1,6 @@
 class JosephMemosController < ApplicationController
   before_action :set_joseph_memo, only: [:show, :edit, :update, :destroy]
+  layout 'welcome'
 
   # GET /joseph_memos
   # GET /joseph_memos.json
