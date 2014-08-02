@@ -79,5 +79,12 @@ gem "finance"
 
 gem 'chartkick'
 
-gem 'squeel', github: 'kiela/squeel'
+#gem 'squeel', github: 'kiela/squeel'
 gem 'quiet_assets', group: :development
+
+group :development do
+  gem 'pry-rescue'
+  gem 'pry-stack_explorer'
+end
+
+gem 'zip'
