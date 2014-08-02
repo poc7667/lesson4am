@@ -735,6 +735,8 @@ section {
   }
   img {
     border-radius: 50%;
+    width: auto;
+    max-height: 180px;
     z-index: 1;
   }
   &.animated {
@@ -802,7 +804,7 @@ section {
   &.animated {
     .name, .position, .info, .social {
       z-index: 200;
-      width: 160%;
+      width: 130%;
     }
     .name {
       top: 5px;
