@@ -1,0 +1,2 @@
+module JosephMemosHelper
+end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140724154154) do
+ActiveRecord::Schema.define(version: 20140802023636) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,15 @@ ActiveRecord::Schema.define(version: 20140724154154) do
   end
 
   add_index "identities", ["user_id"], name: "index_identities_on_user_id", using: :btree
+
+  create_table "joseph_memos", force: true do |t|
+    t.string   "name"
+    t.string   "title"
+    t.text     "words"
+    t.text     "videos"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "ma_reason_slots", force: true do |t|
     t.string   "position"
