@@ -15,7 +15,7 @@ class JosephMemosController < ApplicationController
     @dest_dir =File.expand_path("joseph_memo/users/#{@joseph_memo.id}_#{@joseph_memo.name}", File.dirname(Rails.root))
     FileUtils.mkdir_p @dest_dir
     unless @joseph_memo.imgs.url.include? "missing.png"
-      @imgs_archeive ="#{Rails.root}/public"+ @joseph_memo.imgs.url.match(/(.*?)(\?.*)/)[1]
+      @imgs_archeive = File.join("#{Rails.root}/public", @joseph_memo.imgs.url).match(/(.*?)(\?.*)/)[1]
       move_imgs_to_dest
       unzip_imgs  
     end
