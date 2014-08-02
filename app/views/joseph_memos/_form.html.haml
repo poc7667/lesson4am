@@ -20,3 +20,4 @@
     = f.text_area :videos
   .actions
     = f.submit 'Save'
+          = form_for(@joseph_memo, :html => {:multipart => true}, :url => { :action => "create" , :anchor => "error_form" }) do |f|
