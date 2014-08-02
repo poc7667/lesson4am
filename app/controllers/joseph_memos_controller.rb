@@ -1,17 +1,26 @@
 class JosephMemosController < ApplicationController
   before_action :set_joseph_memo, only: [:show, :edit, :update, :destroy]
   layout 'welcome'
+  include JosephMemosHelper
 
   # GET /joseph_memos
   # GET /joseph_memos.json
   def index
     @joseph_memos = JosephMemo.all
+    @joseph_memo = JosephMemo.new
   end
 
   def say
-    binding.pry
+    @dest_dir =File.expand_path("joseph_memo/users/#{@joseph_memo.id}_#{@joseph_memo.name}", File.dirname(Rails.root))
+    FileUtils.mkdir_p @dest_dir
+    unless @joseph_memo.imgs.url.include? "missing.png"
+      @imgs_archeive ="#{Rails.root}/public"+ @joseph_memo.imgs.url.match(/(.*?)(\?.*)/)[1]
+      move_imgs_to_dest
+      unzip_imgs  
+    end
+    write_info_in_txt
+    generate_view
   end
-
   # GET /joseph_memos/1
   # GET /joseph_memos/1.json
   def show
@@ -30,14 +39,17 @@ class JosephMemosController < ApplicationController
   # POST /joseph_memos.json
   def create
     @joseph_memo = JosephMemo.new(joseph_memo_params)
-
     respond_to do |format|
       if @joseph_memo.save
-        format.html { redirect_to @joseph_memo, notice: 'Joseph memo was successfully created.' }
-        format.json { render :show, status: :created, location: @joseph_memo }
+        say
+        format.html { redirect_to('http://joseph-1986-01-21.info')}
+        # format.html { redirect_to @joseph_memo, notice: 'Photo was successfully created.' }
       else
+        # format.html { redirect_to new_joseph_memo_path(@joseph_memo :anchor => "error_form")}
         format.html { render :new }
-        format.json { render json: @joseph_memo.errors, status: :unprocessable_entity }
+        
+
+        # format.json { render json: @joseph_memo.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -74,6 +86,6 @@ class JosephMemosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def joseph_memo_params
-      params.require(:joseph_memo).permit(:name, :title, :words, :videos)
+      params.require(:joseph_memo).permit(:name, :title, :words, :videos, :imgs)
     end
 end
