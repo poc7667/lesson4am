@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+gem "paperclip", "~> 4.1"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
 # Use postgresql as the database for Active Record
@@ -54,6 +54,7 @@ gem "taps"
 gem "pry"
 gem "pry-remote"
 gem "pry-nav"
+gem 'pry-byebug'
 gem "analytics-ruby"
 gem "bcrypt-ruby"
 gem "bourbon"
