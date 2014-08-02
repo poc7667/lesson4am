@@ -1,0 +1,25 @@
+%h1 Listing joseph_memos
+
+%table
+  %tr
+    %th Name
+    %th Title
+    %th Words
+    %th Videos
+    %th
+    %th
+    %th
+
+  - @joseph_memos.each do |joseph_memo|
+    %tr
+      %td= joseph_memo.name
+      %td= joseph_memo.title
+      %td= joseph_memo.words
+      %td= joseph_memo.videos
+      %td= link_to 'Show', joseph_memo
+      %td= link_to 'Edit', edit_joseph_memo_path(joseph_memo)
+      %td= link_to 'Destroy', joseph_memo, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Joseph memo', new_joseph_memo_path

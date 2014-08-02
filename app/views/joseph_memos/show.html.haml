@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @joseph_memo.name
+%p
+  %b Title:
+  = @joseph_memo.title
+%p
+  %b Words:
+  = @joseph_memo.words
+%p
+  %b Videos:
+  = @joseph_memo.videos
+
+= link_to 'Edit', edit_joseph_memo_path(@joseph_memo)
+\|
+= link_to 'Back', joseph_memos_path

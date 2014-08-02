@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :joseph_memos
+
   resources :photos
 
   resources :pair_groups do

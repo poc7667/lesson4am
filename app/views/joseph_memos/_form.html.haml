@@ -1,0 +1,22 @@
+= form_for @joseph_memo do |f|
+  - if @joseph_memo.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@joseph_memo.errors.count, "error")} prohibited this joseph_memo from being saved:"
+      %ul
+        - @joseph_memo.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.label :words
+    = f.text_area :words
+  .field
+    = f.label :videos
+    = f.text_area :videos
+  .actions
+    = f.submit 'Save'
