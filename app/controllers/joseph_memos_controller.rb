@@ -8,6 +8,10 @@ class JosephMemosController < ApplicationController
     @joseph_memos = JosephMemo.all
   end
 
+  def say
+    binding.pry
+  end
+
   # GET /joseph_memos/1
   # GET /joseph_memos/1.json
   def show

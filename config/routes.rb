@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  resources :joseph_memos
+  resources :joseph_memos do 
+    collection do
+      post :say
+      get :say      
+    end
+  end
 
   resources :photos
 
