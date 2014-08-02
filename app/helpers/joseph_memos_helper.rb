@@ -1,5 +1,4 @@
-# require 'pathname'
-# require 'zip'
+# encoding: utf-8
 module JosephMemosHelper
   def move_imgs_to_dest
     FileUtils.cp(@imgs_archeive, @dest_dir)

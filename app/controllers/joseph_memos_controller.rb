@@ -1,3 +1,4 @@
+# encoding: utf-8
 class JosephMemosController < ApplicationController
   before_action :set_joseph_memo, only: [:show, :edit, :update, :destroy]
   layout 'welcome'
