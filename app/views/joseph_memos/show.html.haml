@@ -1,3 +1,5 @@
+=link_to '前往頁面', 'http://joseph-1986-01-21.info'
+
 %p#notice= notice
 
 %p
@@ -13,6 +15,10 @@
   %b Videos:
   = @joseph_memo.videos
 
+%p
+  %b Imgs:
+  = @joseph_memo.imgs.url 
+  
 = link_to 'Edit', edit_joseph_memo_path(@joseph_memo)
 \|
 = link_to 'Back', joseph_memos_path
