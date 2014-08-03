@@ -20,7 +20,7 @@ module JosephMemosHelper
 
   def get_trimmed_videos
     raw_lines = @joseph_memo.videos.lines.map(&:chomp)
-    @joseph_memo.videos = raw_lines.select{|l| l.include? "http" and l.include? "youtube" }.join('\n')
+    @joseph_memo.videos = raw_lines.select{|l| l.include? "http" and l.include? "youtube" }.join("\n")
   end
 
   def write_info_in_txt
