@@ -88,3 +88,4 @@ group :development do
 end
 
 gem 'zip'
+gem 'unicorn'
