@@ -18,12 +18,18 @@ module JosephMemosHelper
     end
   end
 
+  def get_trimmed_videos
+    raw_lines = @joseph_memo.videos.lines.map(&:chomp)
+    @joseph_memo.videos = raw_lines.select{|l| l.include? "http" and l.include? "youtube" }.join('\n')
+  end
+
   def write_info_in_txt
     Dir.chdir(@dest_dir)
     f = open("words.txt", 'wb')
     f.puts(@joseph_memo.title)
+    f.puts(@joseph_memo.created_at.to_datetime.strftime("Created at: %Y/%m/%d %I:%M %p")+"<br>")    
     f.puts(@joseph_memo.words)
-    f.puts(@joseph_memo.videos)
+    f.puts(get_trimmed_videos)
     f.puts("name:"+@joseph_memo.name)
     f.close
   end
