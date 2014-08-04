@@ -419,6 +419,7 @@ nav.main {
   float: left;
   ul {
     margin: 0;
+    overflow: auto;
     omniauth{
       li{
         a{
@@ -431,6 +432,7 @@ nav.main {
     }    
     li {
       margin: 0;
+      white-space: nowrap;
       a {
         color: #FFF;
         display: block;
