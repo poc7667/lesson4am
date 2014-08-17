@@ -1,0 +1,5 @@
+<style media="screen">
+img { display: none; }
+body { overflow: hidden; }
+#canvas { position: absolute; top: 0; left: 0; }
+</style>

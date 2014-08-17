@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	
+<!-- Mirrored from maroslaw.github.io/rainyday.js/demo2.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 03 Aug 2014 05:42:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+		<meta charset="utf-8">
+		<title>rainyday.js demo #2</title>
+		<link rel="shortcut icon" href="favicon.ico">
+		<style media="screen">
+			img { display: none; }
+			body { overflow: hidden; }
+			#canvas { position: absolute; top: 0; left: 0; }
+		</style>
+		<script src="dist/rainyday.0.1.1.min.js"></script>
+		<script>
+			function demo() {
+				var engine = new RainyDay('canvas', 'background', window.innerWidth, window.innerHeight);
+					engine.gravity = engine.GRAVITY_NON_LINEAR;
+					engine.trail = engine.TRAIL_DROPS;
+					engine.VARIABLE_GRAVITY_ANGLE = Math.PI / 8;
+					engine.rain([
+						engine.preset(0, 2, 0.5),
+						engine.preset(4, 4, 1)
+					], 50);
+			}
+		</script>
+	</head>
+	<body onload="demo();">
+		<img id="background" src="img/city.jpg" alt="background" />
+		<div id="cholder">
+			<canvas id="canvas"></canvas>
+		</div>
+	</body>
+
+<!-- Mirrored from maroslaw.github.io/rainyday.js/demo2.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 03 Aug 2014 05:42:11 GMT -->
+</html>
