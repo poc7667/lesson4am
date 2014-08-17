@@ -1,7 +1,7 @@
-# encoding: utf-8
 class JosephMemosController < ApplicationController
   before_action :set_joseph_memo, only: [:show, :edit, :update, :destroy]
-  layout 'welcome'
+  layout 'joseph_memo'
+  # layout 'welcome'
   include JosephMemosHelper
 
   # GET /joseph_memos
@@ -48,8 +48,6 @@ class JosephMemosController < ApplicationController
       else
         # format.html { redirect_to new_joseph_memo_path(@joseph_memo :anchor => "error_form")}
         format.html { render :new }
-        
-
         # format.json { render json: @joseph_memo.errors, status: :unprocessable_entity }
       end
     end
