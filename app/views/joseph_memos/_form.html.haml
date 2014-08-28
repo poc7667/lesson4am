@@ -30,6 +30,9 @@
           = f.text_area :videos, :placeholder => "Put the youtube videos url that you want to share"
         = f.submit 'Send!', class: 'btn btn-info pull-right' 
 
+%div.center
+  = link_to "Visit Joseph memorial website" ,  "http://joseph-1986-01-21.info", :class => "btn  btn-primary ", :target => "_blank"
+
 :javascript
   $(":file").filestyle({input: false,buttonText: "Upload zip file"});
 
