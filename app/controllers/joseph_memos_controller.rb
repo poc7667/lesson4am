@@ -17,7 +17,7 @@ class JosephMemosController < ApplicationController
     unless @joseph_memo.imgs.url.include? "missing.png"
       @imgs_archeive = File.join("#{Rails.root}/public", @joseph_memo.imgs.url).match(/(.*?)(\?.*)/)[1]
       move_imgs_to_dest
-      unzip_imgs  
+      unzip_imgs
     end
     write_info_in_txt
     generate_view
