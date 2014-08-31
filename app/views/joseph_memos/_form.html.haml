@@ -2,9 +2,9 @@
 = javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.js'
 %link{href: "http://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css", rel: "stylesheet"}/
 %script{src: "http://markusslima.github.io/bootstrap-filestyle/js/bootstrap-filestyle.min.js"}
-%h1.hero Hi Joseph, I wanna say...
+%h1.hero{:style => "color: white" } Hi Joseph, I wanna say...
 
-.row-fluid        
+.row-fluid
   .span10.offset1
     %div#error_form
     / %form#contact{action: "form.php", method: "POST"}
@@ -31,7 +31,8 @@
         = f.submit 'Send!', class: 'btn btn-info pull-right' 
 
 %div.center
-  = link_to "Visit Joseph memorial website" ,  "http://joseph-1986-01-21.info", :class => "btn  btn-primary ", :target => "_blank"
+  = link_to "觀看紀念網站" ,  "http://joseph-1986-01-21.info",{:style => 'color: #FFFFFF', :class => "btn  btn-primary ", :target => "_blank"}
+  = link_to "老頭的相本" ,  "http://joseph-1986-01-21.info/album/gallery.html",{:style => 'color: #FFFFFF', :class => "btn  btn-primary ", :target => "_blank"}
 
 :javascript
   $(":file").filestyle({input: false,buttonText: "Upload zip file"});
