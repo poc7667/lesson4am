@@ -8,7 +8,7 @@ $(document).ready ->
     canvas = document.getElementsByTagName("canvas");
     $.each canvas, (index, item) ->
       item.style.zIndex = -100
-      return 
+      return
     $.each titles, (index, item) ->
       item.style.zIndex = 100
       return
@@ -21,8 +21,7 @@ $(document).ready ->
     engine.rain [
       engine.preset(0, 2, 0.5)
       engine.preset(4, 4, 1)
-    ], 50    
-    return  
+    ], 50
+    return
   run()
   move_canvas_to_bg()
-  
