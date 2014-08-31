@@ -14,22 +14,23 @@
           %h2= "#{pluralize(@joseph_memo.errors.count, "error")} prohibited this joseph_memo from being saved:"
           %%ul
             - @joseph_memo.errors.full_messages.each do |msg|
-              %li= msg          
+              %li= msg
       .row-fluid
-        .span3 
-          = f.text_field :name, :placeholder => "Put your name"                            
-        .span6 
-          = f.text_field :title, :placeholder => "Article title"
+        .span3
+          = f.text_field :name, :placeholder => "顯示的名稱"
+        .span6
+          = f.text_field :title, :placeholder => "欲顯示標題"
         .span3
           = f.file_field :imgs, class: 'filestyle' , type: 'file'
+          .div{:style => "color: white" }
+            = "將照片打包成 Zip 壓縮檔 上傳即可"
       .row-fluid
         .span12
-          = f.text_area :words, :placeholder => "Write your words here"
+          = f.text_area :words, :placeholder => "請寫下你想說的話語"
       .row-fluid
         .span12
-          = f.text_area :videos, :placeholder => "Put the youtube videos url that you want to share"
-        = f.submit 'Send!', class: 'btn btn-info pull-right' 
-
+          = f.text_area :videos, :placeholder => "將想分享的 Youtube 影片網址貼在這裡，如果有多個影片請Enter分行"
+        = f.submit '存檔送出', class: 'btn btn-info pull-right'
 %div.center
   = link_to "觀看紀念網站" ,  "http://joseph-1986-01-21.info",{:style => 'color: #FFFFFF', :class => "btn  btn-primary ", :target => "_blank"}
   = link_to "老頭的相本" ,  "http://joseph-1986-01-21.info/album/gallery.html",{:style => 'color: #FFFFFF', :class => "btn  btn-primary ", :target => "_blank"}
