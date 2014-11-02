@@ -4,7 +4,7 @@ class InvoicesController < ApplicationController
   # GET /invoices
   # GET /invoices.json
   def index
-    @invoices = Invoice.all.order(publish_date: :asc).last(5)
+    @invoices = Invoice.all.order(publish_date: :asc).last(2)
     # respond_to do |format|
     #   format.json {render json: @invoices}
     # end

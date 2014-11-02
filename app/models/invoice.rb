@@ -4,4 +4,7 @@ class Invoice < ActiveRecord::Base
     second_month=publish_date-1.month
     "#{first_month.year}-#{first_month.month.to_s}-#{second_month.month.to_s}"
   end
+  def to_prizes
+    eval(prizes).flatten!
+  end
 end
