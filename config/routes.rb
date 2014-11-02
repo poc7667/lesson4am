@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :invoices
+
   resources :joseph_memos do 
     collection do
       post :say
