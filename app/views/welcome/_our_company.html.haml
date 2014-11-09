@@ -1,51 +1,33 @@
-%section.our-company
+%section.our-company.our_company
   .container
-    %h1.hero 關於我們
+    %h1.hero
+      = t('our_company')
     .row-fluid
-      .span6
-        %h5.primary 我們團隊
-        %p Our team introduction.
-        .row-fluid
-          .span6
-            %h6 Secure
-            %ul.fancy-list{"data-icon" => "icon-ok"}
-              %li List item
-              %li Second list item
-              %li Third item in the list
-          / /.span6
-          .span6
-            %h6 Reliable
-            %ul.fancy-list{"data-icon" => "icon-thumbs-up"}
-              %li List item
-              %li Second list item
-              %li Third item in the list
-          / /.span6
-        / /.row-fluid
-      / /.span4 center
-      .span6
-        %h5.primary 拿手工具
-        %ul.skills.nmp.none
-          %li{"data-width" => "100"}
-            %span Ruby on Rails
-            .background
-              %div
-          %li{"data-width" => "75"}
-            %span Python
-            .background
-              %div
-          %li{"data-width" => "90"}
-            %span Illustrator / Photoshop
-            .background
-              %div 
-          %li{"data-width" => "60"}
-            %span CSS / Javascript
-            .background
-              %div
-          %li{"data-width" => "50"}
-            %span iOS / Android
-            .background
-              %div
-      / /.span4 center
-    / /.row-fluid
-  / /.container
-/ /.features
+      %h5.primary
+      %p Our team introduction.
+      .row-fluid
+      .span12
+        .span4
+          %h6 師資團隊背景
+          %ul.fancy-list{"data-icon" => "icon-ok"}
+            %li 台灣大學網路多媒體研究所-資料探勘實驗室
+            %li 台灣大學資訊工程研究所-嵌入式系統實驗室
+            %li 台灣大學網路多媒體研究所-影像處理實驗室
+            %li 交通大學資訊工程所-整合系統設計實驗室
+            %li 皆各自任職於 Top 科技公司
+        .span4
+          %h6 業界專長領域
+          %ul.fancy-list{"data-icon" => "icon-thumbs-up"}
+            %li 智慧影像識別開發
+            %li Mobile App 開發
+            %li 嵌入式系統開發
+            %li Second list item
+            %li Third item in the list
+        .span4
+          %h6 教學理念與保證
+          %ul.fancy-list{"data-icon" => "icon-thumbs-o-up"}
+            %li 智慧影像識別開發
+            %li Mobile App 開發
+            %li 嵌入式系統開發
+            %li Second list item
+            %li Third item in the list

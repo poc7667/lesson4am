@@ -19,8 +19,9 @@
     / Fonts
     %link{href:  asset_path("economizer/css/font-awesome-alternative.css"), rel: "stylesheet", type: "text/css"}/
     %link{href:  asset_path("economizer/css/font-awesome.css"), rel: "stylesheet", type: "text/css"}/
-    
-    
+    %link{href:  asset_path("economizer/css/skins/dark.css"), rel: "stylesheet", type: "text/css"}/
+
+
     %link{href: "http://fonts.googleapis.com/css?family=Oxygen:400,300,700", rel: "stylesheet", type: "text/css"}/
     %link{href: "http://fonts.googleapis.com/css?family=Montserrat:400,700", rel: "stylesheet", type: "text/css"}/
     / IE
@@ -28,14 +29,14 @@
       <link rel="stylesheet" type="text/css" href="css/ie.css" />
     /[if lt IE 10]
       <script type="text/javascript" src= asset_path("economizer/js/PIE.js")></script>
-    
+
   %body.home
     = yield
     %script{src:  asset_path("economizer/js/bootstrap.js"), type: "text/javascript"}
     %script{src:  asset_path("economizer/js/jquery-ui.min.js"), type: "text/javascript"}
     %script{src:  asset_path("economizer/js/jquery.flexslider.js"), type: "text/javascript"}
     %script{src:  asset_path("economizer/js/jquery.debouncedresize.js"), type: "text/javascript"}
-    %script{src:  asset_path("economizer/js/jquery.actual.js"), type: "text/javascript"}    
+    %script{src:  asset_path("economizer/js/jquery.actual.js"), type: "text/javascript"}
     %script{src:  asset_path("economizer/js/jquery.isotope.min.js"), type: "text/javascript"}
     %script{src:  asset_path("economizer/js/custom.js"), type: "text/javascript"}
     %script{src:  asset_path("economizer/js/portfolio.js"), type: "text/javascript"}
