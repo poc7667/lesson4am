@@ -53,7 +53,8 @@ gem "haml-rails"
 gem "taps"
 gem "pry"
 gem "pry-remote"
-gem "pry-nav"
+#gem "pry-nav"
+gem "pry-stack_explorer"
 gem 'pry-byebug'
 gem "analytics-ruby"
 gem "bcrypt-ruby"
@@ -89,3 +90,5 @@ end
 
 gem 'zip'
 gem 'unicorn'
+
+gem 'font-awesome-rails'

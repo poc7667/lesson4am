@@ -9,7 +9,7 @@
 		2.1. Misc
 		2.2. Buttons
 		2.3. Skills
-		2.4. Testimonials 
+		2.4. Testimonials
 	3. Header
 	4. Footer
 	5. Sections
@@ -426,10 +426,10 @@ nav.main {
           /*border-left: thick solid #FFF;*/
           border-left: thick solid rgba(255, 255, 255, 0.1);
           /*display:block;*/
-          line-height: 24px;        
+          line-height: 20px;
         }
       }
-    }    
+    }
     li {
       margin: 0;
       white-space: nowrap;
@@ -1687,7 +1687,7 @@ textarea {
       margin-left: 0;
       position: relative;
       overflow: hidden;
-      white-space: nowrap;      
+      white-space: nowrap;
     }
   }
   a.logo {

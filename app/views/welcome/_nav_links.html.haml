@@ -1,26 +1,15 @@
 %ul.inline
   - if user_signed_in?
-    %li 
+    %li
       = link_to current_user.name, "#", "omniauth" => "true"
     %li
       = link_to "Sign out", destroy_user_session_path,:method => :delete, "omniauth" => "true"
   - else
-    / %li
-    /   = link_to "Sign up", new_user_registration_path, "omniauth" => "true"
-    / %li
-    /   = link_to "Sign in", new_user_session_path, "omniauth" => "true"
-    %li 
+    %li
       = link_to "Login with Facebook" ,  user_omniauth_authorize_path(:facebook), "omniauth" => "true"
   %omniauth
-    %li 
+    %li
       %a{href: ".home"} Home
-  %li
-    %a{href: ".our-team"} Our Team
-  %li
-    %a{href: ".pricing"} Courses    
-  %li
-    %a{href: ".testimonials"} Testmonies    
-  %li
-    %a{href: ".our-work"} Our Work
-  %li
-    %a{href: ".contact"} Get in touch
+  - view_sections.each do |section|
+    %li
+      = link_to t(section), ".#{section}"

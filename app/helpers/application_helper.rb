@@ -10,4 +10,8 @@ module ApplicationHelper
         end
     end
 
+    def view_sections
+      ["our_company", "courses", "blog"]
+    end
+
 end
