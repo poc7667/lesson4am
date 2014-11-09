@@ -35,7 +35,7 @@ module Lesson4am
     config.assets.paths << "#{Rails.root}/vendor/themes"
     config.assets.precompile += %w( vendor/themes/**/application.js )
     config.assets.precompile += %w( vendor/themes/**/application.css )
-    config.assets.precompile += %w[*.png *.jpg *.jpeg *.gif]
+    config.assets.precompile += %w[*.png *.jpg *.jpeg *.gif *.woff *ttf *.svg *.eot *.otf]
 
     # Precompile *all* assets, except those that start with underscore
     config.assets.precompile << /(^[^_\/]|\/[^_])[^\/]*$/

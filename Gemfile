@@ -90,3 +90,5 @@ end
 
 gem 'zip'
 gem 'unicorn'
+
+gem 'font-awesome-rails'

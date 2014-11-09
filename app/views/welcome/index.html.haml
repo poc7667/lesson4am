@@ -1,28 +1,9 @@
 #switcher.hidden-phone
-  / .handle
-  /   %i.icon.icon-cog
-  / %h5 Color:
-  / %select#skin{name: "skin"}
-  /   %option{value: "default"} Default
-  /   %option{value: "red"} Red
-  /   %option{value: "green"} Green
-  /   %option{value: "pastel"} Pastel
-  /   %option{value: "dark"} Dark
-  /   %option{value: "gold"} Gold
-  /   %option{value: "orange"} Orange
-/ /#switcher
-/ END REMOVE
 .wrapper
   = render 'home_slider'
   = render 'header_main'
-  / = render 'our_company'
-  = render 'our_team'
-  = render 'courses'
-  = render 'testimonials'
-  = render 'our_work'
-  / = render 'portfolio_single'
-  / = render 'pricing'
-  / = render 'blog'
+  - view_sections.each do |section|
+    = render section
 
   %footer.main.contact
     .container
@@ -33,7 +14,7 @@
         #success.alert.alert-success
           Thanks for getting in touch. We will get back to you shortly!
       %img#loading{alt: "Loading", src:  asset_path("economizer/images/loading.gif")}/
-      .row-fluid        
+      .row-fluid
         .span10.offset1
           / %form#contact{action: "form.php", method: "POST"}
           = form_tag('/mails/contact_us', :method => :post) do
@@ -51,7 +32,7 @@
             / /.row-fluid
             .row-fluid
               .span12
-                %textarea#comments.req{name: "comments", placeholder: "Comments..."}
+                %textarea#comments.req{name: "comments", placeholder: t("Ask more information")}
                 %input.pull-right{type: "submit", value: "Send!"}/
               / /.span12
             / /.row-fluid
